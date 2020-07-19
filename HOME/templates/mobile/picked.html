@@ -1,0 +1,143 @@
+{% load i18n %}
+{% load currency %}
+{% load static %}
+
+
+<div class="container">
+<div class="section-title">
+<div class="section-title">
+<h3 class="title">{% trans 'Picked For You'%}</h3>
+</div>
+
+<div id="picked-con">
+{% for rs in products_picked %}
+	<div class="picked-items-con">
+		<div class="">
+        <a href="{% url 'product_detail' rs.id rs.slug %}">
+        	<img src="{{ rs.image.url }}" class="picked-img" alt="">
+        </a>
+    </div>
+    <div class="">
+        <div class="picked-price-con">
+         <p class="picked-price">
+         {{ request.session.currency }} {{ rs.price|currency:request.session.currency }}
+         </p>
+         <p class="picked-oldprice">
+        <strike>
+        	 {{ request.session.currency }} {{ rs.old_price|currency:request.session.currency }}
+        </strike>
+         </p>
+        </div>
+        <div class="picked-rating">
+            <i class="fa fa-star{% if rs.avaregereview < 1%}-o empty{% endif%}"></i>
+            <i class="fa fa-star{% if rs.avaregereview < 2%}-o empty{% endif%}"></i>
+            <i class="fa fa-star{% if rs.avaregereview < 3%}-o empty{% endif%}"></i>
+            <i class="fa fa-star{% if rs.avaregereview < 4%}-o empty{% endif%}"></i>
+            <i class="fa fa-star{% if rs.avaregereview < 5%}-o empty{% endif%}"></i>
+            {{ rs.avaregereview}}/{{ rs.countreview}}
+        </div>
+        <h2 class="picked-name">
+        	<a href="{% url 'product_detail' rs.id rs.slug %}">{{ rs.title }}</a>
+        </h2>
+        
+    </div>
+	</div>
+	{% endfor %}
+</div>
+<!-- END -->
+</div>
+
+
+<style type="text/css">
+	#picked-con{
+		display: flex;
+		overflow-x: auto;
+		height: 350px;
+	}
+	.picked-items-con{
+		width: 200px;
+		margin: 10px;
+		background-color: snow;
+		border-radius: 5px;
+		height: 320px;
+
+	}
+	.picked-items-con:hover{
+		transform: scale(1.05);
+		transition: 0.3s all;
+	}
+	.picked-name{
+		font-size: 16px;
+	}
+	.picked-price{
+		font-size: 18px;
+		color: blue;
+	}
+	.picked-rating{
+		color: orange;
+	}
+	.picked-price-con{
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
+	.picked-oldprice{
+		font-size: 14px;
+	}
+	.picked-img{
+		height: 200px;
+		width: 190px;
+	}
+
+
+	/* ######### MEDIA QUERY --->>>>>>>>####>>>>>>>...>>>*/
+/*// Small devices (landscape phones, 576px and below)*/
+@media (max-width: 576px) {
+#picked-con{
+		
+	height: 220px;
+	}
+.picked-items-con{
+	width: 150px;
+	margin: 2px;
+	border-radius: 5px;
+	height: 200px;
+
+}
+.picked-img{
+	height: 100px;
+	width: 120px;
+	}
+.picked-name{
+	font-size: 10px;
+	}
+.picked-price{
+	font-size: 12px;
+	}
+.picked-oldprice{
+	font-size: 8px;
+	}
+.picked-rating{
+	font-size: 10px;
+	}
+.title{
+  font-size: 14px;
+}
+ }
+
+/*// Medium devices (tablets, 768px and below)*/
+@media (max-width: 768px) { 
+  
+ }
+
+/*/ Large devices (desktops, 992px and below)*/
+@media (max-width: 992px) { 
+ 
+ }
+
+/*/ Extra large devices (large desktops, 1200px and below)*/
+@media (max-width: 1200px) {
+  
+  
+ }
+</style>

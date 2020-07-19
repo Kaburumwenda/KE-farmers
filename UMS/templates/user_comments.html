@@ -1,0 +1,66 @@
+{% extends 'homebase.html' %}
+{% load i18n %}
+{% block title %} User Comments {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+{% block body %}
+    <!-- BREADCRUMB -->
+    <div id="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'home'%}">{% trans 'Home'%}</a></li>
+                <li class="active">{% trans 'User Comments'%}</li>
+            </ul>
+        </div>
+    </div>
+    <!-- /BREADCRUMB -->
+    <!-- section -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-2">
+                    {% include "user_panel.html" %}
+                </div>
+                <div class="col-md-10">
+                    <div class="section-title">
+                        <h4 class="title">{% trans 'User Order List'%}</h4>
+                    </div>
+                    <table class="shopping-cart-table table">
+                        <tr>
+                            <th class="text-left">{% trans 'Product'%} </th>
+                            <th class="text-left">{% trans 'Rate'%} </th>
+                            <th class="text-left">{% trans 'Subject'%} </th>
+                            <th class="text-left">{% trans 'Comment'%} </th>
+                            <th class="text-left">{% trans 'Status'%} </th>
+                            <th class="text-left">{% trans 'Date'%} </th>
+                            <th class="text-left">{% trans 'Detail'%} </th>
+                        </tr>
+                        {% for rs in comments %}
+                            <tr>
+                                <td class="text-left">
+                                    <a href="/product/{{ rs.product_id }}/{{ rs.product.slug }}">
+                                        <strong> {{ rs.product.title}}</strong>
+                                    </a>
+                                </td>
+                                <td class="text-left">{{ rs.rate}} </td>
+                                <td class="text-left">{{ rs.subject}} </td>
+                                <td class="text-left">{{ rs.comment}} </td>
+                                <td class="text-left">{{ rs.status}} </td>
+                                <td class="text-left">{{ rs.create_at}} </td>
+                                <td class="text-left">
+                                    <a class="primary-btn" href="/user/deletecomment/{{ rs.id }}" onclick="return confirm('Will be Delete ! Are you sure?')"> {% trans 'Delete'%} </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /section -->
+{% endblock %}

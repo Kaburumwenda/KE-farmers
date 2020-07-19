@@ -1,0 +1,146 @@
+{% load i18n %}
+{% load currency %}
+{% load static %}
+
+
+<div class="container">
+<div class="section-title">
+<div class="section-title">
+<h3 class="title">{% trans 'Latest Products'%}</h3>
+</div>
+
+<div id="latest-con">
+{% for rs in products_latest %}
+	<div class="latest-items-con">
+		<div class="">
+        <a href="{% url 'product_detail' rs.id rs.slug %}">
+        	<img src="{{ rs.image.url }}" alt="" class="latest-img">
+        </a>
+    </div>
+    <div class="">
+        <div class="latest-price-con">
+         <p class="latest-price">
+         {{ request.session.currency }} {{ rs.price|currency:request.session.currency }}
+         </p>
+         <p class="latest-oldprice">
+        <strike>
+        	 {{ request.session.currency }} {{ rs.old_price|currency:request.session.currency }}
+        </strike>
+         </p>
+        </div>
+        <div class="latest-rating">
+            <i class="fa fa-star{% if rs.avaregereview < 1%}-o empty{% endif%}"></i>
+            <i class="fa fa-star{% if rs.avaregereview < 2%}-o empty{% endif%}"></i>
+            <i class="fa fa-star{% if rs.avaregereview < 3%}-o empty{% endif%}"></i>
+            <i class="fa fa-star{% if rs.avaregereview < 4%}-o empty{% endif%}"></i>
+            <i class="fa fa-star{% if rs.avaregereview < 5%}-o empty{% endif%}"></i>
+            {{ rs.avaregereview}}/{{ rs.countreview}}
+        </div>
+        <h2 class="latest-name">
+        	<a href="{% url 'product_detail' rs.id rs.slug %}">{{ rs.title }}</a>
+        </h2>
+        
+    </div>
+	</div>
+	{% endfor %}
+</div>
+<!-- END -->
+</div>
+
+
+<style type="text/css">
+	#latest-con{
+		display: flex;
+		overflow-x: auto;
+		height: 360px;
+	}
+	.latest-items-con{
+		width: 200px;
+		margin: 10px;
+		background-color: snow;
+		border-radius: 5px;
+		height: 320px;
+
+	}
+	.latest-items-con:hover{
+		transform: scale(1.05);
+		transition: 0.3s all;
+	}
+	.latest-name{
+		font-size: 16px;
+	}
+	.latest-price{
+		font-size: 18px;
+		color: blue;
+	}
+	.latest-rating{
+		color: orange;
+	}
+	.latest-price-con{
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
+	.latest-oldprice{
+		font-size: 14px;
+	}
+	.latest-img{
+		height: 200px;
+		width: 190px;
+	}
+
+	/* ######### MEDIA QUERY --->>>>>>>>####>>>>>>>...>>>*/
+/*// Small devices (landscape phones, 576px and below)*/
+@media (max-width: 576px) {
+#latest-con{
+		
+	height: 220px;
+	}
+.latest-items-con{
+	width: 150px;
+	margin: 2px;
+	border-radius: 5px;
+	height: 200px;
+
+}
+.latest-img{
+	height: 100px;
+	width: 120px;
+	}
+.latest-name{
+	font-size: 10px;
+	}
+.latest-price{
+	font-size: 12px;
+	}
+.latest-oldprice{
+	font-size: 8px;
+	}
+.latest-rating{
+	font-size: 10px;
+	}
+.title{
+  font-size: 14px;
+}
+
+ }
+
+
+
+
+/*// Medium devices (tablets, 768px and below)*/
+@media (max-width: 768px) { 
+  
+ }
+
+/*/ Large devices (desktops, 992px and below)*/
+@media (max-width: 992px) { 
+ 
+ }
+
+/*/ Extra large devices (large desktops, 1200px and below)*/
+@media (max-width: 1200px) {
+  
+  
+ }
+</style>

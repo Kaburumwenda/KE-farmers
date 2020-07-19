@@ -1,0 +1,257 @@
+{% extends 'homebase.html' %}
+{% load currency %}
+{% load i18n %}
+{% block title %} Shop Cart {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+
+
+{% block body %}
+
+<!-- BREADCRUMB -->
+<div id="breadcrumb">
+<div class="container">
+<ul class="breadcrumb">
+    <li><a href="/">{% trans 'Home' %}</a></li>
+    <li class="active">{% trans 'Shopcart' %}</li>
+</ul>
+</div>
+</div>
+<!-- /BREADCRUMB -->
+<!-- section -->
+<div class="section">
+<!-- container -->
+<div class="container">
+<!-- row -->
+<div class="row">
+
+<div class="col-md-12 hidden_xs">
+<div class="order-summary clearfix">
+    <div class="section-title">
+        <h3 class="title">{% trans 'Shopcart Product list' %}</h3>
+    </div>
+    <table class="shopping-cart-table table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>{% trans 'Product' %}</th>
+            <th class="text-center">{% trans 'Price' %}</th>
+            <th class="text-center">{% trans 'Quantity' %}</th>
+            <th class="text-center">{% trans 'Total' %}</th>
+            <th class="text-right"></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for rs in shopcart %}
+            <tr>
+                <td class="thumb">
+                    {% if rs.variant.image_id  > 0 %}
+                   <a href="/product/{{ rs.product.id }}/{{ rs.product.slug }}"> <img src="{{rs.variant.image }}" class="shopcart-img" alt=""></a>
+                  {% else %}
+                   <a href="/product/{{ rs.product.id }}/{{ rs.product.slug }}"> <img src="{{rs.product.image.url}}" alt=""></a>
+                  {% endif %}
+
+                </td>
+                <td class="details">
+                    <a href="/product/{{ rs.product.id }}/{{ rs.product.slug }}">{{rs.product}} {{ rs.variant.size }} {{ rs.variant.color }}</a>  </td>
+                <td class="price text-center"><strong>
+                    {% if rs.product.variant == 'None' %}
+                        {{ rs.product.price|currency:request.session.currency }} {{ request.session.currency }}
+                    {% else %}
+                        {{ rs.variant.price|currency:request.session.currency }} {{ request.session.currency }}
+                    {% endif %}
+                </strong></td>
+                <td class="qty text-center"><strong>{{rs.quantity}}</strong></td>
+                <td class="total text-center"><strong class="primary-color">$
+                    {% if rs.product.variant == 'None' %}
+                        {{ rs.amount|currency:request.session.currency }} {{ request.session.currency }}
+                    {% else %}
+                        {{ rs.varamount|currency:request.session.currency }} {{ request.session.currency }}
+                    {% endif %}
+                </strong></td>
+                <td class="text-right"><a href="/order/deletefromcart/{{ rs.id }}" onclick="return confirm('Delete ! Are you sure?')" class="main-btn icon-btn"><i class="fa fa-close"></i></a></td>
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+        <tfoot>
+        <tr>
+            <th class="empty" colspan="3"></th>
+            <th>SUBTOTAL</th>
+            <th colspan="2" class="sub-total">{{ total|currency:request.session.currency }} {{ request.session.currency }}</th>
+        </tr>
+        <tr>
+            <th class="empty" colspan="3"></th>
+            <th>SHIPING</th>
+            <td colspan="2">Free Shipping</td>
+        </tr>
+        <tr>
+            <th class="empty" colspan="3"></th>
+            <th>TOTAL</th>
+            <th colspan="2" class="total">{{ total|currency:request.session.currency }} {{ request.session.currency }}</th>
+        </tr>
+        </tfoot>
+    </table>
+    <div class="pull-right">
+        <a href="{% url 'orderproduct' %}" class="primary-btn">{% trans 'Place Order' %}</a>
+    </div>
+</div>
+
+</div>
+
+
+</div>
+<!-- /row -->
+
+<!-- >>>>>>>>>>>>>>>> MOBILE CART >>>>>>>>>> START --->
+
+<div id="shopcart-mobile">
+<div>
+{% for rs in shopcart %}
+<div id="shopcart-con">
+    <!-- >>>>> IMAGE & TITLE >>>>> START -->
+    <div class="shopcart-img-con">
+        <div>
+            {% if rs.variant.image_id  > 0 %}
+               <a href="/product/{{ rs.product.id }}/{{ rs.product.slug }}"> <img src="{{rs.variant.image }}" class="shopcart-img" alt=""></a>
+            {% else %}
+               <a href="/product/{{ rs.product.id }}/{{ rs.product.slug }}"> <img src="{{rs.product.image.url}}" alt=""></a>
+            {% endif %}
+        </div>
+        <div class="shopcart-price-title">
+            <div>
+            <a href="/product/{{ rs.product.id }}/{{ rs.product.slug }}">{{rs.product}} {{ rs.variant.size }} {{ rs.variant.color }}</a>
+        </div>
+        <div class="shopcart-price">
+            {% if rs.product.variant == 'None' %}
+                 {{ request.session.currency }} {{ rs.product.price|currency:request.session.currency }}
+            {% else %}
+                 {{ request.session.currency }} {{ rs.variant.price|currency:request.session.currency }}
+            {% endif %}
+        </div>
+        </div>
+    </div>
+    <hr class="mobile">
+    <!-- >>>>> IMAGE & TITLE >>>>> END -->
+    <!-- >>>>> TOTAL & QTY >>>>> START -->
+    <div class="shopcart-total-qty">
+        <div>
+            <div class="shopcart-qty">{{rs.quantity}}</div>
+        </div>
+         <div>
+             {{ request.session.currency }} {{ total|currency:request.session.currency }}
+        </div>
+        <div>
+            <a href="/order/deletefromcart/{{ rs.id }}" onclick="return confirm('Delete ! Are you sure?')" class="shopcart-trash"><i class="fa fa-trash"></i></a>
+        </div>
+       
+    </div>
+    <!-- >>>>> TOTAL & QTY >>>>> END -->
+
+</div>
+{% endfor %}
+<br>
+<div>
+    <div>VAT: 0</div>
+    <hr class="mobile">
+    <div>
+        Shipping: Free Shipping
+    </div>
+    <hr class="mobile">
+    <div>
+        TOTAL:
+    {{ request.session.currency }}
+    {{ total|currency:request.session.currency }}
+</div>
+<hr class="mobile">
+<br>
+</div>
+<div>
+    <button class="btn btn-block btn-success text-center">
+        <a href="{% url 'orderproduct' %}"><strong>{% trans 'Place Order' %}</strong></a>
+    </button>
+</div>
+</div>
+</div>
+
+<!-- >>>>>>>>>>>>>>>> MOBILE CART >>>>>>>>>> END --->
+
+</div>
+<!-- /container -->
+</div>
+<!-- /section -->
+
+<style type="text/css">
+ #shopcart-mobile{
+    display: none;
+ }
+ #shopcart-con{
+    background-color: snow;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #e8e6ae;
+ }
+ .shopcart-img{
+    height: 80px;
+    width: 70px;
+ }
+ .shopcart-img-con{
+    display: flex;
+ }
+ .shopcart-price-title{
+    display: flex;
+    flex-direction: column;
+ }
+ .shopcart-total-qty{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+ }
+ .shopcart-price{
+    color: orange;
+ }
+ .shopcart-trash{
+    color: orange;
+ }
+ .shopcart-trash:hover{
+    color: blue;
+ }
+ .shopcart-qty{
+    border-radius: 50%;
+    width: 20px;
+    text-align: center;
+    font-weight: bolder;
+    background-color: gray;
+    color: white;
+ }
+    
+    
+/* ######### MEDIA QUERY --->>>>>>>>####>>>>>>>...>>>*/
+/*// Small devices (landscape phones, 576px and below)*/
+@media (max-width: 576px) {
+ #shopcart-mobile{
+    display: block;
+ }
+ }
+
+/*// Medium devices (tablets, 768px and below)*/
+@media (max-width: 768px) { 
+  
+ }
+
+/*/ Large devices (desktops, 992px and below)*/
+@media (max-width: 992px) { 
+ 
+ }
+
+/*/ Extra large devices (large desktops, 1200px and below)*/
+@media (max-width: 1200px) {
+  
+  
+ }
+</style>
+
+{% endblock %}

@@ -1,0 +1,129 @@
+{% load static %}
+{% load i18n %}
+
+<!-- >>>>>>>>>>>> MOBILE FOOTER >>>>>>>>> START >>>>>>>-->
+<br>
+<br>
+<div class="mobile-footer">
+	<div class="mobile-footer-con">
+		<div>
+			<a href="{% url 'home'%}">
+				<div>
+					<p><i class="fa fa-home" aria-hidden="true"></i></p>
+					<p>{% trans 'Home'%}</p>
+				</div>
+			</a>
+		</div>
+
+		<div>
+			<a href="{% url 'home'%}">
+				<div>
+					<p><i class="fa fa-th-list" aria-hidden="true"></i></p>
+					<p>{% trans 'Categories'%}</p>
+				</div>
+			</a>
+		</div>
+
+		<div>
+			<a href="{% url 'user_index' %}">
+				<div>
+					<p><i class="fa fa-user" aria-hidden="true"></i></p>
+					<p>{% trans 'Account'%}</p>
+				</div>
+			</a>
+		</div>
+
+		<div>
+			<a href="{% url 'shopcart'%}">
+				<div>
+					<p> <i class="fa fa-cart-plus cart" aria-hidden="true" id="cart-footer"></i>
+						{% load myapptags %}
+                        {% shopcartcount user.id as count %}
+                        <span>{{ count }}</span>
+					</p>
+					<p>{% trans 'Cart'%}</p>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+<!-- >>>>>>>>>>>> MOBILE FOOTER >>>>>>>>> END >>>>>>>-->
+
+<!-- >>>>>>>>>>>> LARGE FOOTER >>>>>>>>> START >>>>>>>-->
+
+<div class="footer2">
+	<hr>
+	<br>
+	<h2>Mesh-Mall LTD</h2>
+	<hr>
+	<br>
+</div>
+
+<!-- >>>>>>>>>>>> LARGE FOOTER >>>>>>>>> END >>>>>>>-->
+
+<!-- jQuery Plugins -->
+
+<style type="text/css">
+.mobile-footer {
+	display: none;
+	}
+.mobile-footer-con{
+	display: flex;
+	justify-content: space-around;
+	margin-top: 5px;
+}
+.mobile-footer-con a{
+	color: white;
+	line-height: 5px;
+	margin-top: 5px;
+}
+.mobile-footer-con a:hover{
+	color: orange;
+	transition: 0.3s all;
+	transform: scale(1.1);
+}
+#cart-footer{
+	color: white !important;
+}
+.footer2{
+	display: none;
+}
+/* ######### MEDIA QUERY --->>>>>>>>####>>>>>>>...>>>*/
+/*// Small devices (landscape phones, 576px and below)*/
+@media (max-width: 576px) {
+  .mobile-footer {
+  	display: block;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #206040;
+	color: white;
+	text-align: center;
+	}
+  
+ }
+
+/*// Medium devices (tablets, 768px and below)*/
+@media (max-width: 768px) { 
+  
+ }
+
+/*/ Large devices (desktops, 992px and below)*/
+@media (max-width: 992px) { 
+ 
+ }
+
+/*/ Extra large devices (large desktops, 1200px and below)*/
+@media (max-width: 1200px) {
+  
+  
+ }
+</style>
+
+<script src="{% static '' %}js/bootstrap.min.js"></script>
+<script src="{% static '' %}js/slick.min.js"></script>
+<script src="{% static '' %}js/nouislider.min.js"></script>
+<script src="{% static '' %}js/jquery.zoom.min.js"></script>
+<script src="{% static '' %}js/main.js"></script>

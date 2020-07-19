@@ -1,0 +1,603 @@
+{% load i18n %}
+{% load currency %}
+
+<style>
+  /* >>>>>>>>> TOP HEADER ONE >>>>>>>>>>>>>>>>>> START >>>>>>*/
+
+.header {
+  background-color: #e8e6ae;
+  padding: 2px;
+  /*padding: 30px;
+  text-align: center;*/
+}
+#top-header{
+  display: flex;
+}
+.spacer{
+  flex: 1;
+}
+#top-header-items ul{
+display: flex;
+}
+#top-header-items ul li{
+  margin: 10px;
+}
+#top-header-items ul li a{
+  font-size: 14px;
+  font-weight: bolder;
+}
+.top-header-select{
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: bolder;
+}
+.top-header-select:hover{
+  
+  color: orange;
+  
+}
+#currency-input{
+  font-size: 14px;
+  font-weight: bolder;
+
+}
+/* >>>>>>>>> TOP HEADER ONE >>>>>>>>>>>>>>>>>> END >>>>>>*/
+
+  /* >>>>>>>>> TOP HEADER TWO >>>>>>>>>>>>>>>>>> START >>>>>>*/
+
+  #header-two{
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+  }
+  #search-con{
+    display: flex;
+    margin: 10px;
+    color: black;
+    align-items: center;
+  }
+  .acc-con{
+    display: flex;
+    color: black;
+    font-weight: bolder;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .cart-con{
+    display: flex;
+    color: black;
+    font-weight: bolder;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .category select{
+    border: none;
+    background: transparent;
+  }
+  .search-input{
+    width: 500px;
+  }
+  .search-input input{
+    border-radius: 10px;
+    background: snow;
+  }
+  .search-btn{
+    background: transparent;
+    border:none;
+    font-size: 16px;
+  }
+  .user-title{
+    display: flex;
+    align-items: center;
+  }
+  .header-btns-icon{
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .cart-count{
+    color: #1d0dfc;
+    font-size:20px;
+    font-weight: bolder;
+    margin-left: 3px;
+  }
+  .cart{
+    font-size: 20px;
+    color: #f26518 !important;
+  }
+
+    /* >>>>>>>>> TOP HEADER TWO >>>>>>>>>>>>>>>>>> END >>>>>>*/
+
+/* <<<<<<<<<<<<############ SIDEBAR >>>>>>>>>>>> START >>>>*/
+.sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: snow;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidepanel a:hover {
+  color: orange;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.openbtn {
+  display: none;
+}
+
+.openbtn:hover {
+ color:#444;
+}
+.sidebar-icon{
+  margin-right: 10px;
+}
+.user{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* <<<<<<<<<<<<############ SIDEBAR >>>>>>>>>>>> END >>>>*/
+
+  
+
+#navbar {
+  
+  background-color:#e8e7c8;
+  z-index: 80;
+  border-bottom: 2px solid green;
+  margin-bottom: 0px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 30px;
+}
+/* ######### MEDIA QUERY --->>>>>>>>####>>>>>>>...>>>*/
+/*// Small devices (landscape phones, 576px and below)*/
+@media (max-width: 576px) {
+  .hidden_xs{
+    display: none;
+  }
+  .search-input{
+    width: 240px;
+    height: 30px;
+  }
+  .cart-count{
+    font-size:14px;
+    margin-left: 3px;
+  }
+  .cart{
+    font-size: 14px;
+  }
+  .cart-con{
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+  #search-con{
+    margin: 3px;  
+  }
+  .search-btn{
+    font-size: 14px;
+  }
+  .acc-con{
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+  .cart-con{
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+  .openbtn {
+  display: block;
+  font-size: 20px;
+  font-weight: bolder;
+  cursor: pointer;
+  background-color:transparent;
+  color: #141edb;
+  padding: 10px 15px;
+  border: none;
+}
+  
+ }
+
+/*// Medium devices (tablets, 768px and below)*/
+@media (max-width: 768px) { 
+  
+ }
+
+/*/ Large devices (desktops, 992px and below)*/
+@media (max-width: 992px) { 
+  
+ }
+
+/*/ Extra large devices (large desktops, 1200px and below)*/
+@media (max-width: 1200px) {
+  
+  
+ }
+</style>
+<!--------------################ MESSAGES #####33 -->
+<div class="..">
+  {% if messages %}
+      {% for message in messages %}
+          <div class="alert alert-{{message.tags}} 
+          btn btn-block btn-primary text-center" role="alert" style="height:30px;">
+              {{ message |safe }}
+          </div>
+      {% endfor %}
+  {% endif %}
+</div>
+
+<!-- TOP HEADER ########### START ############ -->
+<div class="header">
+  <div id="top-header">
+    <div id="menu-icon">
+      <button class="openbtn" onclick="openNav()">☰</button>  
+    </div> 
+    <div>
+      <a href="{% url 'home' %}">{% trans 'Mesh-Mall' %}</a>
+    </div>
+    <!-- sPACER -->
+    <div class="spacer"></div>
+    <!-- sPACER -->
+    <div id="top-header-items">
+      <ul>
+        <li class="hidden_xs"><a href="{% url 'aboutus' %}">{% trans "About Us" %}</a></li>
+        <li class="hidden_xs"><a href="{% url 'contactus' %}">{% trans "Contact Us" %}</a></li>
+        <li class="hidden_xs"><a href="{% url 'faq' %}">{% trans "FAQ" %}</a></li>
+        <li class="dropdown default-dropdown">
+            <form action="{% url 'selectlanguage' %}" method="post">
+              {% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+                <select name="language" onchange="submit()" class="top-header-select" >
+
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                     {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+
+                </select>
+                <noscript>
+                    <input type="submit" value="Set" />
+                </noscript>
+            </form>
+        </li>
+
+        <li class="dropdown default-dropdown hidden_xs">
+
+
+            <form id="currency_switcher" method="POST" action="{% url 'selectcurrency' %}">
+                {% csrf_token %}
+                <select name="currency" onchange="submit()" class="top-header-select">
+                    {% for curr in CURRENCIES %}
+                        <option value="{{ curr.code }}"
+                                {% ifequal curr.code request.session.currency %}selected="selected"{% endifequal %}>
+                            {{ curr.symbol }} {{ curr.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+
+                <noscript>
+                    <input type="submit" value="Set" />
+                </noscript>
+
+            </form>
+        </li>
+
+        <li class="dropdown default-dropdown hidden_xs">
+            <form id="currency_switcher" method="POST" action="{% url 'savelangcur' %}">
+                {% csrf_token %}
+                <button id="currency-input" type="submit">{% trans 'Save' %}</button>
+            </form>
+        </li>
+
+      </ul>
+    </div>
+    <!-- sPACER -->
+    <div></div>
+    <!-- sPACER -->
+  </div>
+</div>
+<!-- TOP HEADER ########### END ############ -->
+
+<div id="navbar">
+ <div id="header-two">
+  <!--- SEARCH >>>>>>>>>>>>>>>>>>START >>>>>>>> -->
+   <div>
+     <script>
+        $(function() {
+            $("#query").autocomplete({
+                source: "/search_auto/",
+                select: function (event, ui) { //item selected
+                    AutoCompleteSelectHandler(event, ui)
+                },
+                minLength: 2,
+            });
+        });
+        function AutoCompleteSelectHandler(event, ui)
+        {
+            var selectedObj = ui.item;
+        }
+    </script>
+    <div>
+      <form action="/search/" method="post">
+        {% csrf_token %}
+        <div id="search-con">
+          <div class="category hidden_xs">
+            <select  name="catid">
+              <option value="0">{% trans "All" %}</option>
+            </select>
+          </div>
+          <div class="search-input">
+            <input id="query" name="query" class="input search-input" type="text" 
+            placeholder="Enter your keyword">
+          </div>
+          <div>
+            <button class="search-btn"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+   </div>
+   <!--- SEARCH >>>>>>>>>>>>>>>>>>END >>>>>>>> -->
+
+<!--- ACCOUNT >>>>>>>>>>>>>>>>>>START >>>>>>>> -->
+
+   <div class="acc-con hidden_xs">
+     <div class="header-account dropdown default-dropdown">
+      {% if user.id is not None %}
+          <div class="dropdown-toggle user-title" role="button" data-toggle="dropdown" aria-expanded="true">
+          <div class="header-btns-icon">
+            <img src="{{ request.session.userimage }}" style="height: 30px;border-radius:50%">
+          </div>
+          <div>
+            <span class="text-capitalize">{{ user.username }} <i class="fa fa-caret-down"></i></span>
+          </div>
+              
+          </div>
+      {% else %}
+          <a href="{% url 'login' %}" class="text-uppercase">{% trans 'Login' %}</a> / <a href="{% url 'signup' %}" class="text-uppercase">{% trans 'Sign up' %}</a>
+      {% endif %}
+
+      <ul class="custom-menu">
+          <hr>
+          <li><a href="{% url 'user_index' %}"><i class="fa fa-user-o"></i> {% trans "My Account" %}</a></li>
+          <li><a href="#"><i class="fa fa-heart-o"></i> {% trans "My Favorits" %}</a></li>
+          <li><a href="{% url 'user_orders' %}"><i class="fa fa-exchange"></i> {% trans "My Orders " %}</a></li>
+          <li><a href="{% url 'user_comments' %}"><i class="fa fa-check"></i> {% trans "My Comments" %}</a></li>
+          <li><a href="{% url 'user_index' %}"><i class="fa fa-cog" aria-hidden="true"></i> {% trans "Settings" %}</a></li>
+          <li><a href="{% url 'logout' %}"><i class="fa fa-unlock-alt"></i> {% trans "Logout" %}</a></li>
+          <hr>
+
+      </ul>
+  </div>
+   </div>
+   <!--- ACCOUNT >>>>>>>>>>>>>>>>>>END >>>>>>>> -->
+
+<!--- CART >>>>>>>>>>>>>>>>>>START >>>>>>>> -->
+
+   <div class="cart-con">
+     <a href="{% url 'shopcart'%}">
+       <div class="hidden_xs">
+         <div>
+          <i class="fa fa-cart-plus cart" aria-hidden="true"></i>
+          {% load myapptags %}
+          {% shopcartcount user.id as count %}
+          <span class="cart-count">{{ count }}</span>
+        </div>
+       </div>
+     </a>
+   </div>
+   <!--- CART>>>>>>>>>>>>>>>>>>END >>>>>>>> -->
+
+ </div>
+
+</div>
+
+<!-- Sidebar -->
+<div id="mySidepanel" class="sidepanel">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+   <div>
+     <ul>
+       {% if user.id is not None %}
+       <li class="user">
+         <span><img src="{{ request.session.userimage }}" style="height:80px;width: 80px;border-radius:50%"></span>
+         <span class="text-capitalize">{{ user.username }}</span>
+       </li>
+       <hr>
+          <li><a href="{% url 'user_index' %}"><i class="fa fa-user-o sidebar-icon"></i> {% trans "My Account" %}</a></li>
+          <li><a href="#"><i class="fa fa-heart-o sidebar-icon"></i> {% trans "My Favorits" %}</a></li>
+          <li><a href="{% url 'user_orders' %}"><i class="fa fa-money sidebar-icon" aria-hidden="true"></i> {% trans "My Orders " %}</a></li>
+          <li><a href="{% url 'user_comments' %}"><i class="fa fa-comments sidebar-icon" aria-hidden="true"></i>
+            {% trans "My Comments" %}</a></li>
+          <li><a href="{% url 'logout' %}"><i class="fa fa-unlock-alt sidebar-icon"></i> {% trans "Logout" %}</a></li>
+          <li><a href="{% url 'aboutus' %}"><i class="fa fa-user sidebar-icon" aria-hidden="true"></i>
+              {% trans "About Us" %}</a></li>
+          <li><a href="{% url 'contactus' %}"><i class="fa fa-map-marker sidebar-icon" aria-hidden="true"></i>
+             {% trans "Contact Us" %}</a></li>
+          <li><a href="{% url 'faq' %}"><i class="fa fa-question-circle sidebar-icon" aria-hidden="true"></i>
+           {% trans "FAQ" %}</a></li>
+           <li><a href="{% url 'user_index' %}"><i class="fa fa-cog sidebar-icon" aria-hidden="true"></i> {% trans "Settings" %}</a></li>
+          <hr>
+          <li class="dropdown default-dropdown">
+
+
+            <form id="currency_switcher" method="POST" action="{% url 'selectcurrency' %}">
+                {% csrf_token %}
+                <select name="currency" onchange="submit()" class="top-header-select">
+                    {% for curr in CURRENCIES %}
+                        <option value="{{ curr.code }}"
+                                {% ifequal curr.code request.session.currency %}selected="selected"{% endifequal %}>
+                            {{ curr.symbol }} {{ curr.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+
+                <noscript>
+                    <input type="submit" value="Set" />
+                </noscript>
+
+            </form>
+        </li>
+          <hr>
+          <li class="dropdown default-dropdown">
+            <form action="{% url 'selectlanguage' %}" method="post">{% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+                <select name="language" onchange="submit()" class="top-header-select" >
+
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+
+                </select>
+                <noscript>
+                    <input type="submit" value="Set" />
+                </noscript>
+            </form>
+        </li>
+          <hr>
+       {%else%}
+       <li>
+         <a href="{% url 'login' %}" class="text-uppercase"><i class="fa fa-sign-in sidebar-icon" aria-hidden="true"></i>
+
+           {% trans 'Login' %}</a>
+       </li>
+       <li>
+         <a href="{% url 'signup' %}" class="text-uppercase"><i class="fa fa-user-plus sidebar-icon" aria-hidden="true"></i>
+           {% trans 'Sign up' %}</a>
+       </li>
+       <li><a href="{% url 'aboutus' %}"><i class="fa fa-user sidebar-icon" aria-hidden="true"></i>
+            {% trans "About Us" %}</a></li>
+        <li><a href="{% url 'contactus' %}"><i class="fa fa-map-marker sidebar-icon" aria-hidden="true"></i>
+            {% trans "Contact Us" %}</a></li>
+        <li><a href="{% url 'faq' %}"><i class="fa fa-question-circle sidebar-icon" aria-hidden="true"></i>
+           {% trans "FAQ" %}</a></li>
+        <li><a href="{% url 'user_index' %}"><i class="fa fa-cog sidebar-icon" aria-hidden="true"></i> {% trans "Settings" %}</a></li>
+        <hr>
+         <li class="dropdown default-dropdown">
+
+
+            <form id="currency_switcher" method="POST" action="{% url 'selectcurrency' %}">
+                {% csrf_token %}
+                <select name="currency" onchange="submit()" class="top-header-select">
+                    {% for curr in CURRENCIES %}
+                        <option value="{{ curr.code }}"
+                                {% ifequal curr.code request.session.currency %}selected="selected"{% endifequal %}>
+                            {{ curr.symbol }} {{ curr.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+
+                <noscript>
+                    <input type="submit" value="Set" />
+                </noscript>
+
+            </form>
+        </li>
+        <hr>
+        <li class="dropdown default-dropdown">
+            <form action="{% url 'selectlanguage' %}" method="post">{% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+                <select name="language" onchange="submit()" class="top-header-select" >
+
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+
+                </select>
+                <noscript>
+                    <input type="submit" value="Set" />
+                </noscript>
+            </form>
+        </li>
+        <hr>
+       {% endif %}
+     </ul>
+   </div>
+</div>
+
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+/* sidebar */
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "200px";
+}
+
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+</script>
+
+
+
+<!-- ############################## -->
+

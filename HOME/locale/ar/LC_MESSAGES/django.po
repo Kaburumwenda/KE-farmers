@@ -1,0 +1,265 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-13 20:09+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+#: HOME/templates/about.html:15 HOME/templates/contactus.html:15
+#: HOME/templates/footer.html:13 HOME/templates/mobile/currency.html:15
+#: HOME/templates/mobile/languages.html:15
+#: HOME/templates/product_detail.html:17
+msgid "Home"
+msgstr "الصفحة الرئيسية"
+
+#: HOME/templates/about.html:16 HOME/templates/mobile/header.html:287
+#: HOME/templates/mobile/header.html:461 HOME/templates/mobile/header.html:521
+msgid "About Us"
+msgstr "معلومات عنا"
+
+#: HOME/templates/contactus.html:16
+msgid "Contact Page"
+msgstr "صفحة الاتصال"
+
+#: HOME/templates/contactus.html:34
+msgid "Contact Form"
+msgstr "نموذج الاتصال"
+
+#: HOME/templates/contactus.html:48
+msgid "SEND FORM"
+msgstr "إرسال النموذج"
+
+#: HOME/templates/contactus.html:57
+msgid "Contact Information"
+msgstr "معلومات للتواصل"
+
+#: HOME/templates/content.html:14
+msgid "Latest Products"
+msgstr "أحدث المنتجات"
+
+#: HOME/templates/content.html:23
+msgid " Quick view"
+msgstr "نظرة سريعة"
+
+#: HOME/templates/content.html:42 HOME/templates/content.html:91
+msgid "Add to Cart"
+msgstr "أضف إلى السلة"
+
+#: HOME/templates/content.html:44
+msgid "Details"
+msgstr "تفاصيل"
+
+#: HOME/templates/content.html:62
+msgid "Picked For You"
+msgstr "اختار لك"
+
+#: HOME/templates/content.html:73
+msgid "Quick view"
+msgstr "نظرة سريعة"
+
+#: HOME/templates/content.html:93
+msgid "Detail"
+msgstr "التفاصيل"
+
+#: HOME/templates/footer.html:22 HOME/templates/sidebar.html:16
+msgid "Categories"
+msgstr "التصنيفات"
+
+#: HOME/templates/footer.html:31
+msgid "Account"
+msgstr "الحساب"
+
+#: HOME/templates/footer.html:44
+msgid "Cart"
+msgstr "عربة التسوق"
+
+#: HOME/templates/header.html:9 HOME/templates/header2.html:8
+msgid "Welcome to E-shop!"
+msgstr ""
+
+#: HOME/templates/header.html:24 HOME/templates/header2.html:23
+msgid "Store"
+msgstr ""
+
+#: HOME/templates/header.html:25 HOME/templates/header2.html:24
+msgid "Newsletter"
+msgstr ""
+
+#: HOME/templates/header.html:26 HOME/templates/header2.html:25
+#: HOME/templates/mobile/header.html:289 HOME/templates/mobile/header.html:465
+#: HOME/templates/mobile/header.html:525
+msgid "FAQ"
+msgstr "التعليمات"
+
+#: HOME/templates/header.html:115 HOME/templates/header2.html:89
+msgid "All Categories"
+msgstr "جميع الفئات"
+
+#: HOME/templates/header.html:140 HOME/templates/header2.html:126
+#: HOME/templates/mobile/header.html:410 HOME/templates/mobile/header.html:454
+msgid "My Account"
+msgstr "حسابي"
+
+#: HOME/templates/header.html:141 HOME/templates/header2.html:127
+#: HOME/templates/mobile/header.html:411 HOME/templates/mobile/header.html:455
+msgid "My Favorits"
+msgstr "مفضلتي"
+
+#: HOME/templates/header.html:142 HOME/templates/header2.html:128
+#: HOME/templates/mobile/header.html:412 HOME/templates/mobile/header.html:456
+msgid "My Orders "
+msgstr ""
+
+#: HOME/templates/header.html:143 HOME/templates/header2.html:129
+#: HOME/templates/mobile/header.html:413 HOME/templates/mobile/header.html:458
+msgid "My Comments"
+msgstr "طلباتي"
+
+#: HOME/templates/header.html:144 HOME/templates/header2.html:130
+#: HOME/templates/mobile/header.html:415 HOME/templates/mobile/header.html:459
+msgid "Logout"
+msgstr "تسجيل خروج"
+
+#: HOME/templates/header.html:160 HOME/templates/header2.html:143
+msgid "My Cart:"
+msgstr "سلة التسوق"
+
+#: HOME/templates/mobile/currency.html:16
+msgid "Currencies"
+msgstr "العملات"
+
+#: HOME/templates/mobile/currency.html:25
+msgid "Currency Calculator"
+msgstr "حاسبة العملات"
+
+#: HOME/templates/mobile/currency.html:31
+msgid "Select Your favorite Currency"
+msgstr "حدد عملتك المفضلة"
+
+#: HOME/templates/mobile/currency.html:61
+msgid "Available Currencies"
+msgstr "العملات المتاحة"
+
+#: HOME/templates/mobile/discovermesh.html:6
+msgid "Discover Mesh-Mall"
+msgstr "اكتشف ميش مول"
+
+#: HOME/templates/mobile/discovermesh.html:20
+msgid "Shop in 5 Languages"
+msgstr "تسوق بخمس لغات"
+
+#: HOME/templates/mobile/discovermesh.html:35
+msgid "Free Home Delivery"
+msgstr "توصيل مجاني للمنزل"
+
+#: HOME/templates/mobile/discovermesh.html:50
+msgid "Shop in 20+ Currencies"
+msgstr "تسوق في 20+ عملات"
+
+#: HOME/templates/mobile/discovermesh.html:65
+msgid "Account Setting"
+msgstr "إعدادات الحساب"
+
+#: HOME/templates/mobile/discovermesh.html:80
+msgid "Secure Payment"
+msgstr "دفع امن"
+
+#: HOME/templates/mobile/discovermesh.html:95
+msgid "24/7 Customer Support"
+msgstr "24/7 دعم العملاء"
+
+#: HOME/templates/mobile/discovermesh.html:110
+msgid "Track your Package"
+msgstr "تتبع حزمة الخاص بك"
+
+#: HOME/templates/mobile/header.html:280
+msgid "Mesh-Mall"
+msgstr "مش مول"
+
+#: HOME/templates/mobile/header.html:288 HOME/templates/mobile/header.html:463
+#: HOME/templates/mobile/header.html:523
+msgid "Contact Us"
+msgstr "اتصل بنا"
+
+#: HOME/templates/mobile/header.html:336
+msgid "Save"
+msgstr "حفظ"
+
+#: HOME/templates/mobile/header.html:374
+msgid "All"
+msgstr "الكل"
+
+#: HOME/templates/mobile/header.html:405 HOME/templates/mobile/header.html:514
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: HOME/templates/mobile/header.html:405 HOME/templates/mobile/header.html:518
+msgid "Sign up"
+msgstr "سجل"
+
+#: HOME/templates/mobile/header.html:414 HOME/templates/mobile/header.html:466
+#: HOME/templates/mobile/header.html:526
+msgid "Settings"
+msgstr "الإعدادات"
+
+#: HOME/templates/mobile/languages.html:16
+msgid "Languages"
+msgstr "اللغات"
+
+#: HOME/templates/mobile/languages.html:25
+msgid "Language Translator"
+msgstr "مترجم لغة"
+
+#: HOME/templates/mobile/languages.html:31
+msgid "Select Your favorite Language"
+msgstr "حدد لغتك المفضلة"
+
+#: HOME/templates/mobile/languages.html:33
+msgid "Kimeru is denoted by"
+msgstr "يرمز Kimeru إلى"
+
+#: HOME/templates/mobile/languages.html:65
+msgid "Available Languages"
+msgstr "اللغات المتوفرة"
+
+#: HOME/templates/product_detail.html:81
+msgid "Review(s)"
+msgstr "مراجعة (مراجعات)"
+
+#: HOME/templates/product_detail.html:81
+msgid "Add Review"
+msgstr "إضافة مراجعة"
+
+#: HOME/templates/product_detail.html:84
+msgid "Brand"
+msgstr "العلامة التجارية"
+
+#: HOME/templates/sidebar.html:39
+msgid "Top Selling"
+msgstr "الأكثر مبيعا"
+
+#: HOME/templates/sidebar.html:40
+msgid "Top Rated"
+msgstr "أعلى التقييمات"
+
+#: HOME/templates/sidebar.html:41
+msgid "New in"
+msgstr "الجديد في"
+
+#: HOME/templates/sidebar.html:42
+#, python-format
+msgid "Above 50%% off"
+msgstr "فوق 50٪ خصم"

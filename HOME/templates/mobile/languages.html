@@ -1,0 +1,186 @@
+{% extends 'homebase.html' %}
+{% load i18n %}
+{% block title %} Language Translator- {{ setting.title }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+
+
+{% block body %}
+
+	<!-- BREADCRUMB -->
+	<div id="breadcrumb">
+		<div class="container">
+			<ul class="breadcrumb">
+                <li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+                <li class="active">{% trans "Languages" %}</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /BREADCRUMB -->
+
+	<!-- section -->
+	<div class="container">
+		<div class="languages-con">
+			<div class="lang-trans text-center">{% trans 'Language Translator'%}</div>
+			<hr class="mobile">
+			<div class="languages-mix">
+				
+                 <!-- >>>>>>>>>>>>> LANGUAGE MIXER TWO>>>>>>>>>> START-->
+				 <div class="Select">
+				  <div class="lang-title">{% trans 'Select Your favorite Language'%}</div>
+				  <!--
+				  <div style="color: yellow">{% trans 'Kimeru is denoted by'%} >> Kimabu</div>
+				-->
+				  <hr class="mobile">
+				  <hr class="mobile">
+				  <div>
+				  	<form action="{% url 'selectlanguage' %}" method="post">
+              {% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+                <select name="language" onchange="submit()" class="lang-select" >
+
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                     {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %} class="text-center">
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+
+                </select>
+                <noscript>
+                    <input type="submit" value="Set" />
+                </noscript>
+            </form>
+
+				  </div>
+				</div>
+
+				<!-- >>>>>>>>>>>>> LANGUAGE MIXER >>>>>>>>>> END-->
+
+				<!-- >>>>>>>>>>>>> LANGUAGE MIXER >>>>>>>>>> START-->
+				<div class="languages">
+				 <div class="lang-title">{% trans 'Available Languages'%}:</div>
+				 <hr class="mobile">
+				 <div>
+				 	{% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                     {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                    <span class="available-lang text-center">{{ language.name_local }} ({{ language.code }})</span>
+                    {% endfor %}
+				 </div>
+				 </div>
+				 <!-- >>>>>>>>>>>>> LANGUAGE MIXER >>>>>>>>>> END-->
+
+
+				</div>
+				<hr class="mobile">
+		</div>
+	</div>
+	<!-- /section -->
+
+
+<style type="text/css">
+.languages-con{
+	margin: 0;
+    background-color: #206040;
+	color: white;
+    position: absolute;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+	}
+
+.languages-mix{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 600px;
+	height: 300px;
+}
+.languages{
+	border: 2px solid white;
+}
+.Select{
+	border: 2px solid white;
+}
+.available-lang{
+	display: flex;
+	flex-direction: column;
+}
+.lang-title{
+	font-weight: bolder;
+	font-size: 20px;
+	color: #eb34d5;
+	margin: 10px;
+}
+.lang-select{
+	color: white;
+	background-color: #206040;
+	border: none;
+	margin-left: 30%;
+	margin-bottom: 20px;
+}
+.lang-select:hover{
+	color: #ffe6ec;
+}
+.lang-trans{
+	font-size: 25px;
+	padding: 10px;
+	font-weight: bolder;
+	color: yellow;
+}
+	/* ######### MEDIA QUERY --->>>>>>>>####>>>>>>>...>>>*/
+/*// Small devices (landscape phones, 576px and below)*/
+@media (max-width: 576px) {
+.languages-mix{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	width: 220px;
+	
+}
+.lang-trans{
+	font-size: 18px;
+	padding: 5px;
+	color: black;
+}
+.lang-title{
+	font-size: 14px;
+	margin: 5px;
+}
+.languages-con{
+	margin-top: 80px;
+	background-color:#e8e6ae;
+	color: black;
+}
+.mobile{
+	background-color: black;
+}
+
+ }
+
+/*// Medium devices (tablets, 768px and below)*/
+@media (max-width: 768px) { 
+  
+ }
+
+/*/ Large devices (desktops, 992px and below)*/
+@media (max-width: 992px) { 
+ 
+ }
+
+/*/ Extra large devices (large desktops, 1200px and below)*/
+@media (max-width: 1200px) {
+  
+  
+ }
+</style>
+
+{% endblock %}

@@ -1,0 +1,215 @@
+{% load static %}
+{% load i18n %}
+
+ <div class="container">
+ 	<div class="section-title">
+ 		<h4>{% trans 'Discover Mesh-Mall'%}</h4>
+ 	</div>
+
+ 	<!-- START DISCOVER MESHMALL -->
+ 	<div id="adverts">
+ 		<!-- SINGLE ADVERTS -->
+ 		<div class="adverts-con">
+ 			<div class="card card2">
+			 <div>
+			 	<a href="{% url 'languages' %}">
+			 	<img src="{% static '' %}img/g2.png " class="card-img-top card-img2" alt="...">
+			 	</a>
+			 </div>
+			  <div class="card-body">
+			    <p class="text-center dis-text">{% trans 'Shop in 5 Languages'%}</p>
+			  </div>
+            </div>
+ 		</div>
+ 		<!-- single end -->
+
+ 		<!-- SINGLE ADVERTS -->
+ 		<div class="adverts-con">
+ 			<div class="card2">
+			  <div>
+			  	<a href="">
+			  		<img src="{% static '' %}img/free2.png " class="card-img-top card-img2" alt="...">
+			  	</a>
+			  </div>
+			  <div class="card-body">
+			    <p class="text-center dis-text">{% trans 'Free Home Delivery'%}</p>
+			  </div>
+            </div>
+ 		</div>
+ 		<!-- single end -->
+
+ 		<!-- SINGLE ADVERTS -->
+ 		<div class="adverts-con">
+ 			<div class="card card2">
+			  <div>
+			  	<a href="{% url 'currency' %}">
+			  	<img src="{% static '' %}img/pay.png " class="card-img-top card-img2" alt="...">
+			  	</a>
+			  </div>
+			  <div class="card-body">
+			    <p class="text-center dis-text">{% trans 'Shop in 20+ Currencies'%}</p>
+			  </div>
+            </div>
+ 		</div>
+ 		<!-- single end -->
+
+ 		<!-- SINGLE ADVERTS -->
+ 		<div class="adverts-con">
+ 			<div class="card card2">
+			  <div>
+			  	<a href="user/">
+			  	<img src="{% static '' %}img/set.png " class="card-img-top card-img2" alt="...">
+			  	</a>
+			  </div>
+			  <div class="card-body">
+			    <p class="text-center dis-text">{% trans 'Account Setting'%}</p>
+			  </div>
+            </div>
+ 		</div>
+ 		<!-- single end -->
+
+ 		<!-- SINGLE ADVERTS -->
+ 		<div class="adverts-con">
+ 			<div class="card card2">
+			  <div>
+			  	<a href="">
+			  	<img src="{% static '' %}img/secure.png " class="card-img-top card-img2" alt="...">
+			  	</a>
+			  </div>
+			  <div class="card-body">
+			    <p class="text-center dis-text">{% trans 'Secure Payment'%}</p>
+			  </div>
+            </div>
+ 		</div>
+ 		<!-- single end -->
+
+ 		<!-- SINGLE ADVERTS -->
+ 		<div class="adverts-con">
+ 			<div class="card card2" >
+			  <div>
+			  	<a href="contact/">
+			  	<img src="{% static '' %}img/support.png " class="card-img-top card-img2" alt="...">
+			  	</a>
+			  </div>
+			  <div class="card-body">
+			    <p class="text-center dis-text">{% trans '24/7 Customer Support'%}</p>
+			  </div>
+            </div>
+ 		</div>
+ 		<!-- single end -->
+
+ 		<!-- SINGLE ADVERTS -->
+ 		<div class="adverts-con">
+ 			<div class="card card2">
+			  <div>
+			  	<a href="user/orders/">
+			  		<img src="{% static '' %}img/track.png " class="card-img-top card-img2" alt="...">
+			  	</a>
+			  </div>
+			  <div class="card-body">
+			    <p class="text-center dis-text">{% trans 'Track your Package'%}</p>
+			  </div>
+            </div>
+ 		</div>
+ 		<!-- single end -->
+ 	</div>
+ 	<!-- END DISCOVER MESHMALL -->
+
+ </div>
+
+<style type="text/css">
+	#adverts{
+		display: flex;
+		overflow-x: auto;
+
+	}
+	.card2{
+		margin: 15px;
+		height: 170px !important;
+		width: 170px !important;
+		border-radius: 50% !important;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: white !important;
+	}
+	.card2:hover{
+		transform: scale(1.05);
+		transition: 0.3s all;
+	}
+	.dis-text{
+		font-weight: bolder!important;
+		font-size: 20px;
+	}
+	.card-img2{
+		width: 80px !important;
+		height: 80px !important;
+		margin-top: 5px;
+	}
+	.adverts-con{
+		height: 240px !important;
+
+	}
+	.card-text{
+		font-weight: bolder;
+		font-size: 16px;
+		margin-left: 19px !important;
+		margin-right: 5px;
+	}
+
+/* ######### MEDIA QUERY --->>>>>>>>####>>>>>>>...>>>*/
+/*// Small devices (landscape phones, 576px and below)*/
+@media (max-width: 576px) {
+.card2{
+	margin: 15px;
+	height: 100px !important;
+	width: 100px !important;
+	border-radius: 50% !important;
+	background-color: white !important;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+}
+.card-img2{
+	width: 40px !important;
+	height: 40px !important;
+	margin-top: 5px;
+	background-color: transparent !important;
+}
+.adverts-con{
+	height: 120px !important;
+
+
+}
+.card-text{
+	font-weight: bolder;
+	font-size: 12px;
+	margin-left: 5px !important;
+	margin-right: 5px;
+}
+.dis-text{
+	font-weight: bolder!important;
+	font-size: 14px;
+	}
+
+ }
+
+/*// Medium devices (tablets, 768px and below)*/
+@media (max-width: 768px) { 
+  
+ }
+
+/*/ Large devices (desktops, 992px and below)*/
+@media (max-width: 992px) { 
+ 
+ }
+
+/*/ Extra large devices (large desktops, 1200px and below)*/
+@media (max-width: 1200px) {
+  
+  
+ }
+</style>
+
+			

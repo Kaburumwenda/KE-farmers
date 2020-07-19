@@ -1,0 +1,176 @@
+{% extends 'homebase.html' %}
+{% load i18n %}
+{% load currency %}
+
+{% block title %} Order List {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+
+
+{% block body %}
+
+    <!-- BREADCRUMB -->
+    <div id="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'home'%}">{% trans 'Home'%}</a></li>
+                <li class="active">{% trans 'Order List'%}</li>
+            </ul>
+        </div>
+    </div>
+    <!-- /BREADCRUMB -->
+    <!-- section -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-3">
+                    {% include "user_panel.html" %}
+                </div>
+
+                <div class="col-md-9" id="order-list">
+                    <div class="order-summary clearfix">
+                        <div class="section-title">
+                            <h4 class="title">{% trans 'Order List'%}</h4>
+                        </div>
+                        <table class="shopping-cart-table table">
+                            <tr>
+                                <th class="text-left">{% trans 'Id'%} </th>
+                                <th class="text-left">{% trans 'First Name'%} </th>
+                                <th class="text-left">{% trans 'Last Name'%} </th>
+                                <th class="text-left">{% trans 'Total'%} </th>
+                                <th class="text-left">{% trans 'Status'%} </th>
+                                <th class="text-left">{% trans 'Date'%} </th>
+                                <th class="text-left">{% trans 'Detail'%} </th>
+                            </tr>
+                            {% for rs in orders %}
+                                <tr>
+                                    <td class="text-left">{{ rs.id}} </td>
+                                    <td class="text-left">{{ rs.first_name}} </td>
+                                    <td class="text-left">{{ rs.last_name}} </td>
+                                    <td class="text-left">{{ rs.total}} </td>
+                                    <td class="text-left">{{ rs.status}} </td>
+                                    <td class="text-left">{{ rs.create_at}} </td>
+                                    <td class="text-left"><a class="primary-btn" href="/user/orderdetail/{{ rs.id }}"> {% trans 'Detail'%} </a></td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- /row -->
+
+
+<!-- >>>>>>>>>>>>>>>>>>>> MOBILE >>>>>>>>>>>>>>>>>START>>-->
+<div id="orderlist-con">
+<div class="section-title">
+    <h4 class="title">{% trans 'Order List'%}</h4>
+</div>
+{% for rs in orders %}
+    <div id="mobile-order-con">
+
+<!-- >>>>>>>>>>>>>>>>>>>> ID | CODE | NAME >>>>>>>>>>>>>>START>>>>>-->
+        <div class="top-sec">
+            <div>
+                <p>{{ rs.id}}</p>
+                <p class="code">Code: {{ rs.code}}</p>
+                <p>{{ rs.first_name}}</p>
+                <p>{{  rs.last_name }}</p>
+            </div>
+            <div>
+                <p>{{ rs.create_at}}</p>
+                <p>Total:
+
+                {{ request.session.currency }} {{ rs.total|currency:request.session.currency}}
+            </p>
+            </div>
+        </div>
+<!-- >>>>>>>>>>>>>>>>>>>> ID | CODE | NAME >>>>>>>>>>>>>>END>>>>>-->
+
+<!-- >>>>>>>>>>>>>>>>>>>> STATUS & DETAILS >>>>>>>>>>>>>>START>>>>>-->
+   <hr class="mobile">
+        <div class="mobile-order-details">
+            <p>{{ rs.status}}</p>
+            <p>
+                <a class="order-detail" href="/user/orderdetail/{{ rs.id }}"> {% trans 'View Details'%} </a>
+            </p>
+        </div>
+<!-- >>>>>>>>>>>>>>>>>>>> STATUS & DETAILS >>>>>>>>>>>>>>END>>>>>-->
+
+    </div>
+{% endfor %}
+</div>
+<!-- >>>>>>>>>>>>>>>>>>>> MOBILE >>>>>>>>>>>>>> END >>>>>-->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /section -->
+
+
+<style type="text/css">
+ #order-list{
+    display: block;
+ }
+ #orderlist-con{
+    display: none;
+ } 
+ #mobile-order-con{
+    background-color: snow;
+    margin: 10px;
+    color: black;
+    border-radius: 5px;
+    border: 2px solid #e8e6ae;
+ }
+ .mobile-order-details{
+    display: flex;
+    justify-content: space-around;
+ }
+ .code{
+    font-size: 10px;
+ }
+ .order-detail{
+    color: orange;
+ }
+ .order-detail a:hover{
+    color: yellow;
+ }
+   
+/* ######### MEDIA QUERY --->>>>>>>>####>>>>>>>...>>>*/
+/*// Small devices (landscape phones, 576px and below)*/
+@media (max-width: 576px) {
+ #order-list{
+    display: none;
+ }
+ #orderlist-con{
+    display: block;
+ }
+ .top-sec{
+    display: flex;
+    justify-content: space-between;
+
+ }
+ }
+
+/*// Medium devices (tablets, 768px and below)*/
+@media (max-width: 768px) { 
+  
+ }
+
+/*/ Large devices (desktops, 992px and below)*/
+@media (max-width: 992px) { 
+ 
+ }
+
+/*/ Extra large devices (large desktops, 1200px and below)*/
+@media (max-width: 1200px) {
+  
+ }
+</style>
+
+{% endblock %}

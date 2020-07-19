@@ -1,0 +1,110 @@
+{% load i18n %}
+{% load currency %}
+{% load static %}
+<!-- section -->
+<div class="section">
+<!-- container -->
+<div class="container">
+
+<!-- row -->
+<div class="row">
+<!-- section title -->
+<div class="col-md-12">
+<div class="section-title">
+<h3 class="title">{% trans 'Up To 50% Discount'%}</h3>
+<div class="pull-right">
+	<div class="product-slick-dots-2 custom-dots">
+	</div>
+</div>
+</div>
+</div>
+<!-- section title -->
+
+<!-- Product Slick -->
+<div class="col-md-12 col-sm-6 col-xs-6 col-lg-12">
+<div class="row">
+<div id="product-slick-2" class="product-slick">
+	<!-- Product Single -->
+	{% for rs in products50off %}
+	<div class="product product-single">
+		<div class="product-thumb">
+			<div class="product-label">
+				<span class="sale">-{{ rs.discount}}%</span>
+			</div>
+			<button class="main-btn quick-view">
+				<a href="{% url 'product_detail' rs.id rs.slug %}">
+					<i class="fa fa-search-plus"></i> {% trans 'Quick view'%}
+				</a>
+			</button>
+			<img src="{{ rs.image.url}}" alt="" class="above-img">
+		</div>
+		<div class="product-body">
+			<h3 class="product-price">
+				{{ request.session.currency }} {{rs.price|currency:request.session.currency }}
+			</h3>
+			<div class="product-rating">
+				<i class="fa fa-star{% if rs.avaregereview < 1%}-o empty{% endif%}"></i>
+                <i class="fa fa-star{% if rs.avaregereview < 2%}-o empty{% endif%}"></i>
+                <i class="fa fa-star{% if rs.avaregereview < 3%}-o empty{% endif%}"></i>
+                <i class="fa fa-star{% if rs.avaregereview < 4%}-o empty{% endif%}"></i>
+                <i class="fa fa-star{% if rs.avaregereview < 5%}-o empty{% endif%}"></i>
+                {{ rs.avaregereview}}/{{ rs.countreview}}
+
+			</div>
+			<h2 class="product-name">
+				<a href="{% url 'product_detail' rs.id rs.slug %}">{{ rs.title }}</a>
+			</h2>
+		</div>
+	</div>
+	{% endfor %}
+	<!-- /Product Single -->
+
+</div>
+</div>
+</div>
+<!-- /Product Slick -->
+</div>
+<!-- /row -->
+</div>
+<!-- /container -->
+</div>
+	<!-- /section -->
+<style type="text/css">
+ .above-img{
+ 	height: 150px;
+ 	width: 150px;
+ }
+	/* ######### MEDIA QUERY --->>>>>>>>####>>>>>>>...>>>*/
+/*// Small devices (landscape phones, 576px and below)*/
+@media (max-width: 576px) {
+.product-price{
+	font-size: 16px;
+	color: blue;
+}
+.product-name{
+	font-size: 14x;
+}
+.product-rating i{
+	font-size: 12px;
+}
+
+ }
+
+/*// Medium devices (tablets, 768px and below)*/
+@media (max-width: 768px) { 
+  
+ }
+
+/*/ Large devices (desktops, 992px and below)*/
+@media (max-width: 992px) { 
+ 
+ }
+
+/*/ Extra large devices (large desktops, 1200px and below)*/
+@media (max-width: 1200px) {
+  
+  
+ }
+</style>
+
+	

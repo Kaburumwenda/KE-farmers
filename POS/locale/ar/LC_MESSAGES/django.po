@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-13 20:09+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+#: POS/templates/Order_Form.html:15 POS/templates/shopcart_products.html:16
+msgid "Home"
+msgstr ""
+
+#: POS/templates/Order_Form.html:16
+msgid "Order Page"
+msgstr ""
+
+#: POS/templates/Order_Form.html:33
+msgid "Shipping Details"
+msgstr ""
+
+#: POS/templates/Order_Form.html:35
+msgid "First name"
+msgstr ""
+
+#: POS/templates/Order_Form.html:37
+msgid "Last name"
+msgstr ""
+
+#: POS/templates/Order_Form.html:39
+msgid "Address"
+msgstr ""
+
+#: POS/templates/Order_Form.html:41
+msgid "Phone"
+msgstr ""
+
+#: POS/templates/Order_Form.html:43
+msgid "City"
+msgstr ""
+
+#: POS/templates/Order_Form.html:53
+msgid "Country"
+msgstr ""
+
+#: POS/templates/Order_Form.html:56
+msgid "Complete Order"
+msgstr ""
+
+#: POS/templates/shopcart_products.html:17
+msgid "Shopcart"
+msgstr ""
+
+#: POS/templates/shopcart_products.html:32
+msgid "Shopcart Product list"
+msgstr ""
+
+#: POS/templates/shopcart_products.html:38
+msgid "Product"
+msgstr ""
+
+#: POS/templates/shopcart_products.html:39
+msgid "Price"
+msgstr ""
+
+#: POS/templates/shopcart_products.html:40
+msgid "Quantity"
+msgstr ""
+
+#: POS/templates/shopcart_products.html:41
+msgid "Total"
+msgstr ""
+
+#: POS/templates/shopcart_products.html:99
+msgid "Place Order"
+msgstr ""

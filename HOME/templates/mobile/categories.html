@@ -1,0 +1,132 @@
+{% load i18n %}
+
+<script type="text/javascript">
+	
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
+
+<div class="container">
+
+	<div class="section-title">
+        <h4 class="title">{% trans 'Hot Categories'%}</h4>
+    </div>
+
+<div class="cat-con">
+ {% load mptt_tags %}
+    <ul class="">
+        {% recursetree category %}
+            <li class="dropdown top-dropdown" id="dropdown">
+                
+                	<a href="{% url 'category_products' node.id node.slug %}" class="dropdown-toggle" {% if not node.is_leaf_node %} data-toggle="dropdown" aria-expanded="true" {% endif %}>
+                	<div><img src="{{ node.icons.url }}" class="cat-icons"></div>
+                	<div><strong>{{ node.title }}</strong></div>
+                </a>
+               
+                    <div class="custom-menu">
+                  
+                                <div class="custom-menu-children">
+
+                                    {% if not node.is_leaf_node %}
+                                        <ul class=""><!-- list-links -->
+                                            
+                                            <li><a href="#">{{ children }}</a></li>
+                                        </ul>
+                                    {% endif %}
+
+                                   
+                                </div>
+                            
+                        </div>    
+            </li>
+        {% endrecursetree %}
+
+    </ul>
+</div>
+
+
+</div>
+
+<style type="text/css">
+.cat-icons{
+	width: 70px;
+	height: 90px;
+}
+.cat-con ul{
+	display: flex;
+	flex-wrap: wrap;
+
+}
+.cat-con ul li{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid #e8e6ae;
+	border-radius: 10px;
+	margin: 10px;
+	background-color: snow;
+	width: 169px;
+	height: 130px;
+}
+.cat-con ul li:hover{
+	transform: scale(1.05);
+	z-index: 1;
+	transition: 0.3s all;
+}
+.custom-menu-children {
+	display: flex;
+	width: 370px;
+	border-radius: 10px;
+	background-color:#e8e6ae; 
+	
+}
+#dropdown> .custom-menu{
+	background-color: #e8e6ae;
+	border-radius: 10px;
+}
+.custom-menu-children ul li{
+	width: 80px;
+	margin: 3px;
+}
+
+
+	/* ######### MEDIA QUERY --->>>>>>>>####>>>>>>>...>>>*/
+/*// Small devices (landscape phones, 576px and below)*/
+@media (max-width: 576px) {
+.cat-con ul li{
+	margin: 2px;
+	width: 80px;
+	height: 130px;
+}
+.cat-icons{
+	width: 75px;
+	height: 60px;
+}
+.custom-menu-children ul li{
+	width: 80px;
+	
+}
+.custom-menu-children {
+	width: 140px !important;
+	
+}
+
+}
+
+/*// Medium devices (tablets, 768px and below)*/
+@media (max-width: 768px) { 
+  
+ }
+
+/*/ Large devices (desktops, 992px and below)*/
+@media (max-width: 992px) { 
+ 
+ }
+
+/*/ Extra large devices (large desktops, 1200px and below)*/
+@media (max-width: 1200px) {
+  
+  
+ }
+</style>

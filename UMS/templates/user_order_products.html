@@ -1,0 +1,181 @@
+{% extends 'homebase.html' %}
+{% load i18n %}
+{% load currency %}
+
+{% block title %} Order Detail {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+
+
+{% block body %}
+
+<!-- BREADCRUMB -->
+<div id="breadcrumb">
+<div class="container">
+<ul class="breadcrumb">
+<li><a href="{% url 'home' %}">{% trans 'Home'%}</a></li>
+<li class="active">{% trans 'Order Produts'%}</li>
+</ul>
+</div>
+</div>
+<!-- /BREADCRUMB -->
+<!-- section -->
+<div class="section">
+<!-- container -->
+<div class="container">
+<!-- row -->
+<div class="row">
+<div class="col-md-2">
+{% include "user_panel.html" %}
+</div>
+
+<div class="col-md-10">
+<div class="order-summary clearfix">
+    <div class="section-title">
+        <h3 class="title">{% trans 'Order Product List'%}</h3>
+    </div>
+
+    <table class="shopping-cart-table table">
+        <tr>
+            <th class="text-left">{% trans 'Id'%} </th>
+            <th class="text-left">{% trans 'Product Name'%} </th>
+            <th class="text-left">{% trans 'Price'%} </th>
+            <th class="text-left">{% trans 'Qauatity'%} </th>
+            <th class="text-left">{% trans 'Amount'%} </th>
+            <th class="text-left">{% trans 'Status'%} </th>
+            <th class="text-left">{% trans 'Date'%} </th>
+            <th class="text-left">{% trans 'Detail'%} </th>
+        </tr>
+        {% for rs in order_product %}
+            <tr>
+                <td class="text-left">
+                    <a href="/product/{{ rs.product_id }}/{{ rs.product.slug }}">
+                        {% if rs.variant.image_id > 0 %}
+                            <img src="{{rs.variant.image }}" alt="" style="height: 80px">
+                        {% else %}
+                            <img src="{{rs.product.image.url}}" alt="" style="height: 80px">
+                        {% endif %}
+                    </a>
+                </td>
+                <td>{{ rs.product.title}} {{ rs.variant.size }}   {{ rs.variant.color }}</td>
+                <td class="text-left">{{ rs.price}} </td>
+                <td class="text-left">{{ rs.quantity}} </td>
+                <td class="text-left">{{ rs.amount}} </td>
+                <td class="text-left">{{ rs.status}} </td>
+                <td class="text-left">{{ rs.create_at}} </td>
+                <td class="text-left"><a class="primary-btn" href="/user/order_product_detail/{{ rs.id }}/{{ rs.order.id}}"> {% trans 'Detail'%} </a></td>
+
+            </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+</div>
+</div>
+<!-- /row -->
+<!-- >>>>>>>>>>>>>>>>>>>>>>MOBILE >>>>>>>>>> START >>>>>>>>.-->
+<br>
+<hr>
+<div class="mobile-order-summary">
+    <div class="section-title">
+        <h4 class="title">{% trans 'Order Product List'%}</h4>
+    </div>
+
+{% for rs in order_product %}
+    <div class="product-list-con">
+<!-- >>>>>>>>>>>>>>>>>>>>>>MOBILE >>>>>>>>>> START >>>>>>>>.-->
+        <div class="product-list-img-con">
+            <div>
+                <a href="/product/{{ rs.product_id }}/{{ rs.product.slug }}">
+                {% if rs.variant.image_id > 0 %}
+                    <img src="{{rs.variant.image }}" alt="" style="height: 80px">
+                {% else %}
+                    <img src="{{rs.product.image.url}}" alt="" style="height: 80px">
+                {% endif %}
+                    </a>
+            </div>
+            <div class="product-list-title">
+                <p>{{ rs.product.title}} {{ rs.variant.size }}   {{ rs.variant.color }}</p>
+                <p> Price:                   
+                {{ request.session.currency }} {{ rs.price|currency:request.session.currency}}
+                </p>
+                <p>Total:
+                {{ rs.amount}}</p>
+            </div>
+        </div>
+<!-- >>>>>>>>>>>>>>>>>>>>>>MOBILE >>>>>>>>>> START >>>>>>>>.-->
+
+<!-- >>>>>>>>>>>>>>>>>>>>>>MOBILE >>>>>>>>>> START >>>>>>>>.-->
+<hr class="mobile">
+        <div class="product-list-qty">
+            <p>{{ rs.quantity}}</p>
+            <p>{{ rs.status}}</p>
+            <p>
+            <a class="product-list-details" href="/user/order_product_detail/{{ rs.id }}/{{ rs.order.id}}"> {% trans 'View Details'%} </a>
+            </p>
+        </div>
+<!-- >>>>>>>>>>>>>>>>>>>>>>MOBILE >>>>>>>>>> START >>>>>>>>.-->
+    </div>
+{% endfor %}
+</div>
+<!-- >>>>>>>>>>>>>>>>>>>>>>MOBILE >>>>>>>>>> END >>>>>>>>.-->
+</div>
+<!-- /container -->
+</div>
+<!-- /section -->
+<style type="text/css">
+ .mobile-order-summary{
+    display: none;
+ }
+ .product-list-con{
+    background-color: white;
+    border: 2px solid #e8e6ae;
+    border-radius:5px;
+    margin: 15px;
+ }
+ .product-list-img-con{
+    display: flex;
+    justify-content: space-around;
+ }
+ .product-list-title{
+    margin-left: 10px;
+ }
+ .product-list-qty{
+    display: flex;
+    justify-content: space-around;
+ }
+ .product-list-details{
+    color: orange;
+ }
+   
+/* ######### MEDIA QUERY --->>>>>>>>####>>>>>>>...>>>*/
+/*// Small devices (landscape phones, 576px and below)*/
+@media (max-width: 576px) {
+ .order-summary{
+    display: none;
+ }
+ .mobile-order-summary{
+    display: block;
+ }
+ }
+
+/*// Medium devices (tablets, 768px and below)*/
+@media (max-width: 768px) { 
+  
+ }
+
+/*/ Large devices (desktops, 992px and below)*/
+@media (max-width: 992px) { 
+ 
+ }
+
+/*/ Extra large devices (large desktops, 1200px and below)*/
+@media (max-width: 1200px) {
+  
+  
+ }
+</style>
+
+{% endblock %}

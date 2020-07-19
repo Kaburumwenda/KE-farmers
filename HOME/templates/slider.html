@@ -1,0 +1,60 @@
+{% load currency %}
+{% load static %}
+	<!-- HOME -->
+	<div id="home">
+		<!-- container -->
+		<div class="container">
+			<!-- home wrap -->
+			<div class="home-wrap">
+				<!-- home slick -->
+				<div id="home-slick">
+
+                    {% for rs in products_slider %}
+                    <!-- banner -->
+					<div class="banner banner-1">
+						<img src="{{ rs.image.url }}" alt="" class="slider-img">
+					</div>
+					<!-- /banner -->
+                    {% endfor %}
+
+				</div>
+				<!-- /home slick -->
+			</div>
+			<!-- /home wrap -->
+		</div>
+		<!-- /container -->
+	</div>
+	<br>
+	<hr>
+	<!-- /HOME -->
+
+<style type="text/css">
+
+.slider-img{
+	height: 500px;
+}
+/* ######### MEDIA QUERY --->>>>>>>>####>>>>>>>...>>>*/
+/*// Small devices (landscape phones, 576px and below)*/
+@media (max-width: 576px) {
+.slider-img{
+	height: 180px;
+}
+  
+ }
+
+/*// Medium devices (tablets, 768px and below)*/
+@media (max-width: 768px) { 
+  
+ }
+
+/*/ Large devices (desktops, 992px and below)*/
+@media (max-width: 992px) { 
+ 
+ }
+
+/*/ Extra large devices (large desktops, 1200px and below)*/
+@media (max-width: 1200px) {
+  
+  
+ }
+	</style>
