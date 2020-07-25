@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'PMS.apps.PmsConfig',
     'HRMS.apps.HrmsConfig',
     'HOME.apps.HomeConfig',
+    'Multivendor.apps.MultivendorConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,8 +46,11 @@ INSTALLED_APPS = [
     'ckeditor',
     'mptt',
     'currencies',
+    'crispy_forms',
 
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -64,7 +68,7 @@ ROOT_URLCONF = 'CORE.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,11 +125,64 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGES = [
+"""LANGUAGES = [
     ('en', _('English')),
     ('sw', _('Swahili')),
     ('ar', _('Arabic')),
+]"""
+
+LANGUAGES = [
+    ('en', _('English')),
+    ('sw', _('Swahili')),
+    ('ar', _('عربى')),
+    ('hi', _('हिन्दी')),
+    ('cs', _('中文')),
+
 ]
+
+EXTRA_LANG_INFO = {
+    'en': {
+        'bidi': False, # right-to-left
+        'code': 'en',
+        'name': 'English',
+        'name_local': 'English', #unicode codepoints here
+    },
+    'ar': {
+        'bidi': False, # right-to-left
+        'code': 'ar',
+        'name': 'عربى',
+        'name_local': 'عربى', #unicode codepoints here
+    },
+    'sw': {
+        'bidi': False, # right-to-left
+        'code': 'sw',
+        'name': 'Swahili',
+        'name_local': 'Kiswahili', #unicode codepoints here
+    },
+    'hi': {
+        'bidi': False, # right-to-left
+        'code': 'hi',
+        'name': 'हिन्दी',
+        'name_local': 'हिन्दी', #unicode codepoints here
+    },
+    'cs': {
+        'bidi': False, # right-to-left
+        'code': 'cs',
+        'name': '中文',
+        'name_local': '中文', #unicode codepoints here
+    },
+}
+
+# Add custom languages not provided by Django
+import django.conf.locale
+from django.conf import global_settings
+LANG_INFO = dict(EXTRA_LANG_INFO.items())
+django.conf.locale.LANG_INFO = LANG_INFO
+
+# Languages using BiDi (right-to-left) layout
+#global_settings.LANGUAGES = global_settings.LANGUAGES + (("ki",'Kimeru'),)
+
+
 
 
 LOCALE_PATHS = (

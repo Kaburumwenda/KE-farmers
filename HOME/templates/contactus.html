@@ -1,5 +1,6 @@
 {% extends 'homebase.html' %}
 {% load i18n %}
+{% load crispy_forms_tags %}
 {% block title %} Contact Us-{{ setting.title }} {% endblock %}
 {% block description %} {{ setting.description }} {% endblock %}
 {% block keywords %} {{ setting.keywords }} {% endblock %}
@@ -44,8 +45,11 @@
                         </div>
                         <form id="checkout-form" class="clearfix" method="post">
                             {% csrf_token %}
-                            {{ form.as_p }}
-                            <input type="submit" value="{% trans "SEND FORM" %}">
+                            {{ form|crispy }}
+                            <button type="submit" class="btn btn-block btn-info btn-lg">
+                                <i class="fa fa-paper-plane"></i>  
+                                {% trans 'SEND FORM' %}                        
+                            </button>
                         </form>
                     </div>
 
@@ -72,6 +76,31 @@
         <!-- /container -->
     </div>
     <!-- /section -->
+<style type="text/css">
+    /* ######### MEDIA QUERY --->>>>>>>>####>>>>>>>...>>>*/
+/*// Small devices (landscape phones, 576px and below)*/
+@media (max-width: 576px) {
+  .title{
+    font-size: 14px;
+  }
+  
+ }
 
+/*// Medium devices (tablets, 768px and below)*/
+@media (max-width: 768px) { 
+  
+ }
+
+/*/ Large devices (desktops, 992px and below)*/
+@media (max-width: 992px) { 
+  
+ }
+
+/*/ Extra large devices (large desktops, 1200px and below)*/
+@media (max-width: 1200px) {
+  
+  
+ }
+</style>
 
 {% endblock %}

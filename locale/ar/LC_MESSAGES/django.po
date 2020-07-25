@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-13 20:09+0300\n"
+"POT-Creation-Date: 2020-07-24 22:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,29 +19,57 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: CORE/settings.py:125
+#: CORE/settings.py:135
 msgid "English"
 msgstr ""
 
-#: CORE/settings.py:126
+#: CORE/settings.py:136
 msgid "Swahili"
 msgstr ""
 
-#: CORE/settings.py:127
-msgid "Arabic"
+#: CORE/settings.py:137
+msgid "عربى"
 msgstr ""
 
-#: CORE/urls.py:38
+#: CORE/settings.py:138
+msgid "हिन्दी"
+msgstr ""
+
+#: CORE/settings.py:139
+msgid "中文"
+msgstr ""
+
+#: CORE/urls.py:39
 msgid "admin/"
 msgstr "مشرف/"
 
-#: CORE/urls.py:47
+#: CORE/urls.py:48
 msgid "about/"
 msgstr "حول/"
 
-#: CORE/urls.py:48
+#: CORE/urls.py:49
 msgid "contact/"
 msgstr "اتصل/"
+
+#: Multivendor/templates/multivendorform.html:16
+msgid "Home"
+msgstr ""
+
+#: Multivendor/templates/multivendorform.html:17
+msgid "Multivendor Portal"
+msgstr ""
+
+#: Multivendor/templates/multivendorform.html:25
+msgid "Product Upload Form"
+msgstr ""
+
+#: Multivendor/templates/multivendorform.html:74
+msgid "Submit"
+msgstr ""
+
+#: Multivendor/templates/multivendorform.html:76
+msgid "SEND FORM"
+msgstr ""
 
 #: env/lib/python3.8/site-packages/ckeditor_uploader/forms.py:8
 msgid "Search files"
@@ -94,6 +122,25 @@ msgstr ""
 msgid "&lsaquo; Prev"
 msgstr ""
 
+#: env/lib/python3.8/site-packages/crispy_forms/tests/test_form_helper.py:129
+#: env/lib/python3.8/site-packages/crispy_forms/tests/test_form_helper.py:139
+#: env/lib/python3.8/site-packages/django/forms/fields.py:53
+msgid "This field is required."
+msgstr ""
+
+#: env/lib/python3.8/site-packages/crispy_forms/tests/test_layout.py:361
+msgid "i18n text"
+msgstr ""
+
+#: env/lib/python3.8/site-packages/crispy_forms/tests/test_layout.py:361
+msgid "i18n legend"
+msgstr ""
+
+#: env/lib/python3.8/site-packages/crispy_forms/tests/test_layout_objects.py:129
+#: env/lib/python3.8/site-packages/django/core/validators.py:32
+msgid "Enter a valid value."
+msgstr ""
+
 #: env/lib/python3.8/site-packages/django/contrib/messages/apps.py:7
 msgid "Messages"
 msgstr ""
@@ -120,10 +167,6 @@ msgstr ""
 
 #: env/lib/python3.8/site-packages/django/core/paginator.py:52
 msgid "That page contains no results"
-msgstr ""
-
-#: env/lib/python3.8/site-packages/django/core/validators.py:32
-msgid "Enter a valid value."
 msgstr ""
 
 #: env/lib/python3.8/site-packages/django/core/validators.py:103
@@ -511,10 +554,6 @@ msgstr ""
 #. characters will prevent the default label_suffix to be appended to the label
 #: env/lib/python3.8/site-packages/django/forms/boundfield.py:149
 msgid ":?.!"
-msgstr ""
-
-#: env/lib/python3.8/site-packages/django/forms/fields.py:53
-msgid "This field is required."
 msgstr ""
 
 #: env/lib/python3.8/site-packages/django/forms/fields.py:246

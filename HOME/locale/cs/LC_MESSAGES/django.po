@@ -1,0 +1,275 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-25 00:15+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
+"<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+#: HOME/templates/about.html:15 HOME/templates/contactus.html:16
+#: HOME/templates/faq.html:23 HOME/templates/footer.html:13
+#: HOME/templates/mobile/currency.html:15
+#: HOME/templates/mobile/languages.html:15
+#: HOME/templates/product_detail.html:17
+msgid "Home"
+msgstr "家"
+
+#: HOME/templates/about.html:16 HOME/templates/mobile/header.html:317
+#: HOME/templates/mobile/header.html:502 HOME/templates/mobile/header.html:562
+msgid "About Us"
+msgstr "关于我们"
+
+#: HOME/templates/contactus.html:17
+msgid "Contact Page"
+msgstr "联系页面"
+
+#: HOME/templates/contactus.html:35
+msgid "Contact Form"
+msgstr "联系表"
+
+#: HOME/templates/contactus.html:51
+msgid "SEND FORM"
+msgstr "发送表格"
+
+#: HOME/templates/contactus.html:61
+msgid "Contact Information"
+msgstr "联系信息"
+
+#: HOME/templates/faq.html:24
+msgid "Frequently Asked Questions"
+msgstr "经常问的问题"
+
+#: HOME/templates/footer.html:22 HOME/templates/sidebar.html:16
+msgid "Categories"
+msgstr "分类目录"
+
+#: HOME/templates/footer.html:31
+msgid "Account"
+msgstr "帐户"
+
+#: HOME/templates/footer.html:44
+msgid "Cart"
+msgstr "大车"
+
+#: HOME/templates/header.html:9 HOME/templates/header2.html:8
+msgid "Welcome to E-shop!"
+msgstr ""
+
+#: HOME/templates/header.html:24 HOME/templates/header2.html:23
+msgid "Store"
+msgstr ""
+
+#: HOME/templates/header.html:25 HOME/templates/header2.html:24
+msgid "Newsletter"
+msgstr ""
+
+#: HOME/templates/header.html:26 HOME/templates/header2.html:25
+#: HOME/templates/mobile/header.html:319 HOME/templates/mobile/header.html:506
+#: HOME/templates/mobile/header.html:566
+msgid "FAQ"
+msgstr "经常问的问题"
+
+#: HOME/templates/header.html:115 HOME/templates/header2.html:89
+msgid "All Categories"
+msgstr "所有类别"
+
+#: HOME/templates/header.html:140 HOME/templates/header2.html:126
+#: HOME/templates/mobile/header.html:451 HOME/templates/mobile/header.html:495
+msgid "My Account"
+msgstr "我的帐户"
+
+#: HOME/templates/header.html:141 HOME/templates/header2.html:127
+#: HOME/templates/mobile/header.html:452 HOME/templates/mobile/header.html:496
+msgid "My Favorits"
+msgstr "我最喜欢的"
+
+#: HOME/templates/header.html:142 HOME/templates/header2.html:128
+#: HOME/templates/mobile/header.html:453 HOME/templates/mobile/header.html:497
+msgid "My Orders "
+msgstr "我的订单"
+
+#: HOME/templates/header.html:143 HOME/templates/header2.html:129
+#: HOME/templates/mobile/header.html:454 HOME/templates/mobile/header.html:499
+msgid "My Comments"
+msgstr "我的评论"
+
+#: HOME/templates/header.html:144 HOME/templates/header2.html:130
+#: HOME/templates/mobile/header.html:456 HOME/templates/mobile/header.html:500
+msgid "Logout"
+msgstr ""
+
+#: HOME/templates/header.html:160 HOME/templates/header2.html:143
+msgid "My Cart:"
+msgstr "登出"
+
+#: HOME/templates/mobile/above50%off.html:14
+#, python-format
+msgid "Up To 50%% Discount"
+msgstr "高达百分之五十的折扣"
+
+#: HOME/templates/mobile/above50%off.html:36
+msgid "Quick view"
+msgstr "快速浏览"
+
+#: HOME/templates/mobile/categories.html:13
+msgid "Hot Categories"
+msgstr "热门类别"
+
+#: HOME/templates/mobile/currency.html:16
+msgid "Currencies"
+msgstr "货币"
+
+#: HOME/templates/mobile/currency.html:25
+msgid "Currency Calculator"
+msgstr "货币计算器"
+
+#: HOME/templates/mobile/currency.html:31
+msgid "Select Your favorite Currency"
+msgstr "选择您喜欢的货币"
+
+#: HOME/templates/mobile/currency.html:61
+msgid "Available Currencies"
+msgstr "可用货币"
+
+#: HOME/templates/mobile/discovermesh.html:6
+msgid "Discover Mesh-Mall"
+msgstr "探索网格商城"
+
+#: HOME/templates/mobile/discovermesh.html:20
+msgid "Shop in 5 Languages"
+msgstr "以五种以上的语言购物"
+
+#: HOME/templates/mobile/discovermesh.html:35
+msgid "Free Home Delivery"
+msgstr "免费送货上门"
+
+#: HOME/templates/mobile/discovermesh.html:50
+msgid "Shop in 20+ Currencies"
+msgstr "购物二十余种货币"
+
+#: HOME/templates/mobile/discovermesh.html:65
+msgid "Account Setting"
+msgstr "账户设置"
+
+#: HOME/templates/mobile/discovermesh.html:80
+msgid "Secure Payment"
+msgstr "安全付款"
+
+#: HOME/templates/mobile/discovermesh.html:95
+msgid "24/7 Customer Support"
+msgstr "客户支持"
+
+#: HOME/templates/mobile/discovermesh.html:110
+msgid "Track your Package"
+msgstr "追踪您的包裹"
+
+#: HOME/templates/mobile/header.html:304 HOME/templates/mobile/header.html:386
+msgid "Mesh-Mall"
+msgstr "网格商城"
+
+#: HOME/templates/mobile/header.html:309
+msgid " Sell "
+msgstr "卖"
+
+#: HOME/templates/mobile/header.html:318 HOME/templates/mobile/header.html:504
+#: HOME/templates/mobile/header.html:564
+msgid "Contact Us"
+msgstr "联系我们"
+
+#: HOME/templates/mobile/header.html:366
+msgid "Save"
+msgstr "保存"
+
+#: HOME/templates/mobile/header.html:415
+msgid "All"
+msgstr "所有"
+
+#: HOME/templates/mobile/header.html:420
+msgid "Enter your keyword"
+msgstr "输入您的关键字"
+
+#: HOME/templates/mobile/header.html:446 HOME/templates/mobile/header.html:555
+msgid "Login"
+msgstr "登录"
+
+#: HOME/templates/mobile/header.html:446 HOME/templates/mobile/header.html:559
+msgid "Sign up"
+msgstr "注册"
+
+#: HOME/templates/mobile/header.html:455 HOME/templates/mobile/header.html:507
+#: HOME/templates/mobile/header.html:567
+msgid "Settings"
+msgstr "设定值"
+
+#: HOME/templates/mobile/languages.html:16
+msgid "Languages"
+msgstr "语言能力"
+
+#: HOME/templates/mobile/languages.html:25
+msgid "Language Translator"
+msgstr "语言翻译"
+
+#: HOME/templates/mobile/languages.html:31
+msgid "Select Your favorite Language"
+msgstr "选择您喜欢的语言"
+
+#: HOME/templates/mobile/languages.html:33
+msgid "Kimeru is denoted by"
+msgstr ""
+
+#: HOME/templates/mobile/languages.html:65
+msgid "Available Languages"
+msgstr "可用语言"
+
+#: HOME/templates/mobile/latest.html:9
+msgid "Latest Products"
+msgstr "最新产品"
+
+#: HOME/templates/mobile/picked.html:9
+msgid "Picked For You"
+msgstr "为你挑选"
+
+#: HOME/templates/product_detail.html:81
+msgid "Review(s)"
+msgstr "评论"
+
+#: HOME/templates/product_detail.html:81
+msgid "Add Review"
+msgstr "添加评论"
+
+#: HOME/templates/product_detail.html:84
+msgid "Brand"
+msgstr "牌"
+
+#: HOME/templates/product_detail.html:85
+msgid "Seller"
+msgstr "卖方"
+
+#: HOME/templates/sidebar.html:39
+msgid "Top Selling"
+msgstr "最畅销"
+
+#: HOME/templates/sidebar.html:40
+msgid "Top Rated"
+msgstr "最高评分"
+
+#: HOME/templates/sidebar.html:41
+msgid "New in"
+msgstr "新进"
+
+#: HOME/templates/sidebar.html:42
+#, python-format
+msgid "Above 50%% off"
+msgstr "超过百分之五十的折扣"

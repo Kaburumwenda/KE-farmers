@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-13 20:09+0300\n"
+"POT-Creation-Date: 2020-07-24 22:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,44 +18,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-#: POS/templates/Order_Form.html:15 POS/templates/shopcart_products.html:16
+
+#: POS/templates/Order_Completed.html:15 POS/templates/Order_Form.html:16
+#: POS/templates/shopcart_products.html:16
 msgid "Home"
 msgstr ""
 
-#: POS/templates/Order_Form.html:16
+#: POS/templates/Order_Completed.html:16
+msgid "Order Complated"
+msgstr ""
+
+#: POS/templates/Order_Form.html:17
 msgid "Order Page"
 msgstr ""
 
-#: POS/templates/Order_Form.html:33
+#: POS/templates/Order_Form.html:34
 msgid "Shipping Details"
 msgstr ""
 
-#: POS/templates/Order_Form.html:35
+#: POS/templates/Order_Form.html:36
 msgid "First name"
 msgstr ""
 
-#: POS/templates/Order_Form.html:37
+#: POS/templates/Order_Form.html:39
 msgid "Last name"
 msgstr ""
 
-#: POS/templates/Order_Form.html:39
+#: POS/templates/Order_Form.html:42
 msgid "Address"
 msgstr ""
 
-#: POS/templates/Order_Form.html:41
+#: POS/templates/Order_Form.html:45
 msgid "Phone"
 msgstr ""
 
-#: POS/templates/Order_Form.html:43
+#: POS/templates/Order_Form.html:48
+msgid "Email"
+msgstr ""
+
+#: POS/templates/Order_Form.html:51
 msgid "City"
 msgstr ""
 
-#: POS/templates/Order_Form.html:53
+#: POS/templates/Order_Form.html:55
 msgid "Country"
 msgstr ""
 
-#: POS/templates/Order_Form.html:56
-msgid "Complete Order"
+#: POS/templates/Order_Form.html:133
+msgid "Proceed To Payments"
 msgstr ""
 
 #: POS/templates/shopcart_products.html:17
@@ -83,5 +93,6 @@ msgid "Total"
 msgstr ""
 
 #: POS/templates/shopcart_products.html:99
+#: POS/templates/shopcart_products.html:174
 msgid "Place Order"
 msgstr ""

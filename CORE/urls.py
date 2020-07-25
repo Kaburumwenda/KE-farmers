@@ -23,6 +23,7 @@ from django.urls import path, include
 from HOME import views
 from POS import views as OrderViews
 from UMS import views as UserViews
+from Multivendor import views as MultivendorsViews
 from django.utils.translation import gettext_lazy as _
 
 urlpatterns = [
@@ -58,6 +59,7 @@ urlpatterns += i18n_patterns(
     path('languages/', views.languages, name='languages'),
     path('currency/', views.currency, name='currency'),
     path('payments/', OrderViews.payments, name='payments'),
+    path('vendors/',MultivendorsViews.multivendorform, name='multivendorform'),
     path('ajaxcolor/', views.ajaxcolor, name='ajaxcolor'),
     prefix_default_language=False,
 )+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

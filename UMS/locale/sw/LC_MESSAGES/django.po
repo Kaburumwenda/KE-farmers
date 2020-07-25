@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-13 20:09+0300\n"
+"POT-Creation-Date: 2020-07-24 22:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: UMS/templates/login_form.html:15 UMS/templates/signup_form.html:15
+
+#: UMS/templates/login_form.html:15 UMS/templates/signup_form.html:17
+#: UMS/templates/user_comments.html:12 UMS/templates/user_order_detail.html:17
+#: UMS/templates/user_order_products.html:17 UMS/templates/user_orders.html:17
+#: UMS/templates/user_password.html:16 UMS/templates/user_profile.html:15
+#: UMS/templates/user_update.html:15
 msgid "Home"
 msgstr ""
 
@@ -29,14 +34,223 @@ msgstr ""
 msgid "Login Form"
 msgstr ""
 
-#: UMS/templates/signup_form.html:16
+#: UMS/templates/signup_form.html:18
 msgid "User sign Up"
 msgstr ""
 
-#: UMS/templates/signup_form.html:33
+#: UMS/templates/signup_form.html:30
 msgid "Sign Up Form"
 msgstr ""
 
-#: UMS/templates/signup_form.html:58
+#: UMS/templates/signup_form.html:66
 msgid "Sign Up"
+msgstr ""
+
+#: UMS/templates/signup_form.html:71
+msgid "already have an Account"
+msgstr ""
+
+#: UMS/templates/signup_form.html:72
+msgid "Login"
+msgstr ""
+
+#: UMS/templates/user_comments.html:13
+msgid "User Comments"
+msgstr ""
+
+#: UMS/templates/user_comments.html:29
+msgid "User Order List"
+msgstr ""
+
+#: UMS/templates/user_comments.html:33
+msgid "Product"
+msgstr ""
+
+#: UMS/templates/user_comments.html:34
+msgid "Rate"
+msgstr ""
+
+#: UMS/templates/user_comments.html:35
+msgid "Subject"
+msgstr ""
+
+#: UMS/templates/user_comments.html:36
+msgid "Comment"
+msgstr ""
+
+#: UMS/templates/user_comments.html:37 UMS/templates/user_order_detail.html:60
+#: UMS/templates/user_order_detail.html:84
+#: UMS/templates/user_order_products.html:46 UMS/templates/user_orders.html:44
+msgid "Status"
+msgstr ""
+
+#: UMS/templates/user_comments.html:38 UMS/templates/user_order_detail.html:65
+#: UMS/templates/user_order_detail.html:85
+#: UMS/templates/user_order_products.html:47 UMS/templates/user_orders.html:45
+msgid "Date"
+msgstr ""
+
+#: UMS/templates/user_comments.html:39
+#: UMS/templates/user_order_products.html:48
+#: UMS/templates/user_order_products.html:67 UMS/templates/user_orders.html:46
+#: UMS/templates/user_orders.html:56
+msgid "Detail"
+msgstr ""
+
+#: UMS/templates/user_comments.html:54
+msgid "Delete"
+msgstr ""
+
+#: UMS/templates/user_order_detail.html:18
+#: UMS/templates/user_order_detail.html:36
+msgid "Order Detail"
+msgstr ""
+
+#: UMS/templates/user_order_detail.html:40 UMS/templates/user_profile.html:48
+msgid "Name Surname"
+msgstr ""
+
+#: UMS/templates/user_order_detail.html:44 UMS/templates/user_profile.html:56
+msgid "Phone"
+msgstr ""
+
+#: UMS/templates/user_order_detail.html:48 UMS/templates/user_profile.html:60
+msgid "Addres"
+msgstr ""
+
+#: UMS/templates/user_order_detail.html:52 UMS/templates/user_profile.html:64
+msgid "City"
+msgstr ""
+
+#: UMS/templates/user_order_detail.html:56 UMS/templates/user_profile.html:68
+msgid "Country"
+msgstr ""
+
+#: UMS/templates/user_order_detail.html:74
+msgid "Order Item List"
+msgstr ""
+
+#: UMS/templates/user_order_detail.html:79
+#: UMS/templates/user_order_products.html:41 UMS/templates/user_orders.html:40
+msgid "Id"
+msgstr ""
+
+#: UMS/templates/user_order_detail.html:80
+#: UMS/templates/user_order_products.html:42
+msgid "Product Name"
+msgstr ""
+
+#: UMS/templates/user_order_detail.html:81
+#: UMS/templates/user_order_products.html:43
+msgid "Price"
+msgstr ""
+
+#: UMS/templates/user_order_detail.html:82
+#: UMS/templates/user_order_products.html:44
+msgid "Qauatity"
+msgstr ""
+
+#: UMS/templates/user_order_detail.html:83
+#: UMS/templates/user_order_products.html:45
+msgid "Amount"
+msgstr ""
+
+#: UMS/templates/user_order_detail.html:118
+msgid "Order Items List"
+msgstr ""
+
+#: UMS/templates/user_order_detail.html:152
+#: UMS/templates/user_order_products.html:116
+#: UMS/templates/user_orders.html:101
+msgid "View Details"
+msgstr ""
+
+#: UMS/templates/user_order_products.html:18
+msgid "Order Produts"
+msgstr ""
+
+#: UMS/templates/user_order_products.html:36
+#: UMS/templates/user_order_products.html:83
+msgid "Order Product List"
+msgstr ""
+
+#: UMS/templates/user_orders.html:18 UMS/templates/user_orders.html:36
+#: UMS/templates/user_orders.html:73
+msgid "Order List"
+msgstr ""
+
+#: UMS/templates/user_orders.html:41
+msgid "First Name"
+msgstr ""
+
+#: UMS/templates/user_orders.html:42
+msgid "Last Name"
+msgstr ""
+
+#: UMS/templates/user_orders.html:43
+msgid "Total"
+msgstr ""
+
+#: UMS/templates/user_panel.html:6
+msgid "User Panel"
+msgstr ""
+
+#: UMS/templates/user_panel.html:10 UMS/templates/user_profile.html:16
+msgid "User Profile"
+msgstr ""
+
+#: UMS/templates/user_panel.html:11
+msgid "My Orders"
+msgstr ""
+
+#: UMS/templates/user_panel.html:12
+msgid "My Order Product"
+msgstr ""
+
+#: UMS/templates/user_panel.html:13
+msgid "My Comments"
+msgstr ""
+
+#: UMS/templates/user_panel.html:14
+msgid "My Favorits"
+msgstr ""
+
+#: UMS/templates/user_panel.html:15
+msgid "My Products"
+msgstr ""
+
+#: UMS/templates/user_panel.html:16
+msgid "Logout"
+msgstr ""
+
+#: UMS/templates/user_password.html:17 UMS/templates/user_profile.html:43
+msgid "Change Password"
+msgstr ""
+
+#: UMS/templates/user_password.html:37
+msgid "User Change Password"
+msgstr ""
+
+#: UMS/templates/user_password.html:64
+msgid "Save changes"
+msgstr ""
+
+#: UMS/templates/user_profile.html:36
+msgid "User Profile info."
+msgstr ""
+
+#: UMS/templates/user_profile.html:42
+msgid "Update Profile"
+msgstr ""
+
+#: UMS/templates/user_profile.html:52
+msgid "Email"
+msgstr ""
+
+#: UMS/templates/user_update.html:16 UMS/templates/user_update.html:36
+msgid "User Profile Update"
+msgstr ""
+
+#: UMS/templates/user_update.html:47
+msgid "Update"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-13 20:09+0300\n"
+"POT-Creation-Date: 2020-07-24 22:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,61 +17,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: HOME/templates/about.html:15 HOME/templates/contactus.html:15
-#: HOME/templates/footer.html:13 HOME/templates/mobile/currency.html:15
+
+#: HOME/templates/about.html:15 HOME/templates/contactus.html:16
+#: HOME/templates/faq.html:23 HOME/templates/footer.html:13
+#: HOME/templates/mobile/currency.html:15
 #: HOME/templates/mobile/languages.html:15
 #: HOME/templates/product_detail.html:17
 msgid "Home"
 msgstr "Nyumbani"
 
-#: HOME/templates/about.html:16 HOME/templates/mobile/header.html:287
-#: HOME/templates/mobile/header.html:461 HOME/templates/mobile/header.html:521
+#: HOME/templates/about.html:16 HOME/templates/mobile/header.html:317
+#: HOME/templates/mobile/header.html:502 HOME/templates/mobile/header.html:562
 msgid "About Us"
 msgstr "Kuhusu sisi"
 
-#: HOME/templates/contactus.html:16
+#: HOME/templates/contactus.html:17
 msgid "Contact Page"
 msgstr "Ukurasa wa Mawasiliano"
 
-#: HOME/templates/contactus.html:34
+#: HOME/templates/contactus.html:35
 msgid "Contact Form"
 msgstr "Fomu ya Mawasiliano"
 
-#: HOME/templates/contactus.html:48
+#: HOME/templates/contactus.html:51
 msgid "SEND FORM"
 msgstr "TUMA FOMU"
 
-#: HOME/templates/contactus.html:57
+#: HOME/templates/contactus.html:61
 msgid "Contact Information"
 msgstr "Habari ya Mawasiliano"
 
-#: HOME/templates/content.html:14
-msgid "Latest Products"
-msgstr "Bidhaa za Hivi karibuni"
-
-#: HOME/templates/content.html:23
-msgid " Quick view"
-msgstr "Mtazamo wa haraka"
-
-#: HOME/templates/content.html:42 HOME/templates/content.html:91
-msgid "Add to Cart"
-msgstr "Kuongeza kwa Ununuzi"
-
-#: HOME/templates/content.html:44
-msgid "Details"
-msgstr "Maelezo"
-
-#: HOME/templates/content.html:62
-msgid "Picked For You"
-msgstr "Imechukuliwa kwa ajili yako"
-
-#: HOME/templates/content.html:73
-msgid "Quick view"
-msgstr "Mtazamo wa haraka"
-
-#: HOME/templates/content.html:93
-msgid "Detail"
-msgstr "Maelezo"
+#: HOME/templates/faq.html:24
+msgid "Frequently Asked Questions"
+msgstr ""
 
 #: HOME/templates/footer.html:22 HOME/templates/sidebar.html:16
 msgid "Categories"
@@ -98,8 +76,8 @@ msgid "Newsletter"
 msgstr ""
 
 #: HOME/templates/header.html:26 HOME/templates/header2.html:25
-#: HOME/templates/mobile/header.html:289 HOME/templates/mobile/header.html:465
-#: HOME/templates/mobile/header.html:525
+#: HOME/templates/mobile/header.html:319 HOME/templates/mobile/header.html:506
+#: HOME/templates/mobile/header.html:566
 msgid "FAQ"
 msgstr "maswali yanayoulizwa mara kwa mara"
 
@@ -108,33 +86,48 @@ msgid "All Categories"
 msgstr "Jumia yote"
 
 #: HOME/templates/header.html:140 HOME/templates/header2.html:126
-#: HOME/templates/mobile/header.html:410 HOME/templates/mobile/header.html:454
+#: HOME/templates/mobile/header.html:451 HOME/templates/mobile/header.html:495
 msgid "My Account"
 msgstr "Akaunti yangu"
 
 #: HOME/templates/header.html:141 HOME/templates/header2.html:127
-#: HOME/templates/mobile/header.html:411 HOME/templates/mobile/header.html:455
+#: HOME/templates/mobile/header.html:452 HOME/templates/mobile/header.html:496
 msgid "My Favorits"
 msgstr "Vipendwa vyangu"
 
 #: HOME/templates/header.html:142 HOME/templates/header2.html:128
-#: HOME/templates/mobile/header.html:412 HOME/templates/mobile/header.html:456
+#: HOME/templates/mobile/header.html:453 HOME/templates/mobile/header.html:497
 msgid "My Orders "
 msgstr "Amri zangu"
 
 #: HOME/templates/header.html:143 HOME/templates/header2.html:129
-#: HOME/templates/mobile/header.html:413 HOME/templates/mobile/header.html:458
+#: HOME/templates/mobile/header.html:454 HOME/templates/mobile/header.html:499
 msgid "My Comments"
 msgstr "Maoni yangu"
 
 #: HOME/templates/header.html:144 HOME/templates/header2.html:130
-#: HOME/templates/mobile/header.html:415 HOME/templates/mobile/header.html:459
+#: HOME/templates/mobile/header.html:456 HOME/templates/mobile/header.html:500
 msgid "Logout"
 msgstr "Toka"
 
 #: HOME/templates/header.html:160 HOME/templates/header2.html:143
 msgid "My Cart:"
 msgstr "Ununuzi Wangu"
+
+#: HOME/templates/mobile/above50%off.html:14
+#, python-format
+msgid "Up To 50%% Discount"
+msgstr ""
+
+#: HOME/templates/mobile/above50%off.html:36
+msgid "Quick view"
+msgstr "Mtazamo wa haraka"
+
+#: HOME/templates/mobile/categories.html:13
+#, fuzzy
+#| msgid "Categories"
+msgid "Hot Categories"
+msgstr "Jamii"
 
 #: HOME/templates/mobile/currency.html:16
 msgid "Currencies"
@@ -184,33 +177,41 @@ msgstr "Msaada wa Wateja 24/7"
 msgid "Track your Package"
 msgstr "Fuatilia mzigo wako"
 
-#: HOME/templates/mobile/header.html:280
+#: HOME/templates/mobile/header.html:304 HOME/templates/mobile/header.html:386
 msgid "Mesh-Mall"
 msgstr ""
 
-#: HOME/templates/mobile/header.html:288 HOME/templates/mobile/header.html:463
-#: HOME/templates/mobile/header.html:523
+#: HOME/templates/mobile/header.html:309
+msgid " Sell "
+msgstr ""
+
+#: HOME/templates/mobile/header.html:318 HOME/templates/mobile/header.html:504
+#: HOME/templates/mobile/header.html:564
 msgid "Contact Us"
 msgstr "Wasiliana nasi"
 
-#: HOME/templates/mobile/header.html:336
+#: HOME/templates/mobile/header.html:366
 msgid "Save"
 msgstr "Hifadhi"
 
-#: HOME/templates/mobile/header.html:374
+#: HOME/templates/mobile/header.html:415
 msgid "All"
 msgstr "Jumla"
 
-#: HOME/templates/mobile/header.html:405 HOME/templates/mobile/header.html:514
+#: HOME/templates/mobile/header.html:420
+msgid "Enter your keyword"
+msgstr ""
+
+#: HOME/templates/mobile/header.html:446 HOME/templates/mobile/header.html:555
 msgid "Login"
 msgstr "Ingia"
 
-#: HOME/templates/mobile/header.html:405 HOME/templates/mobile/header.html:518
+#: HOME/templates/mobile/header.html:446 HOME/templates/mobile/header.html:559
 msgid "Sign up"
 msgstr "Jisajili"
 
-#: HOME/templates/mobile/header.html:414 HOME/templates/mobile/header.html:466
-#: HOME/templates/mobile/header.html:526
+#: HOME/templates/mobile/header.html:455 HOME/templates/mobile/header.html:507
+#: HOME/templates/mobile/header.html:567
 msgid "Settings"
 msgstr "Mipangilio"
 
@@ -234,6 +235,14 @@ msgstr "Kimeru ameonyeshwa na"
 msgid "Available Languages"
 msgstr "Lugha Zinazopatikana"
 
+#: HOME/templates/mobile/latest.html:9
+msgid "Latest Products"
+msgstr "Bidhaa za Hivi karibuni"
+
+#: HOME/templates/mobile/picked.html:9
+msgid "Picked For You"
+msgstr "Imechukuliwa kwa ajili yako"
+
 #: HOME/templates/product_detail.html:81
 msgid "Review(s)"
 msgstr "Maoni"
@@ -245,6 +254,10 @@ msgstr "Ongeza Mapitio"
 #: HOME/templates/product_detail.html:84
 msgid "Brand"
 msgstr "Aina"
+
+#: HOME/templates/product_detail.html:85
+msgid "Seller"
+msgstr ""
 
 #: HOME/templates/sidebar.html:39
 msgid "Top Selling"
@@ -262,3 +275,15 @@ msgstr "Mpya katika"
 #, python-format
 msgid "Above 50%% off"
 msgstr "Zaidi ya 50% imezimwa"
+
+#~ msgid " Quick view"
+#~ msgstr "Mtazamo wa haraka"
+
+#~ msgid "Add to Cart"
+#~ msgstr "Kuongeza kwa Ununuzi"
+
+#~ msgid "Details"
+#~ msgstr "Maelezo"
+
+#~ msgid "Detail"
+#~ msgstr "Maelezo"

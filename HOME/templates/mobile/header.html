@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load currency %}
+{% load static %}
 
 <style>
   /* >>>>>>>>> TOP HEADER ONE >>>>>>>>>>>>>>>>>> START >>>>>>*/
@@ -194,11 +195,31 @@ display: flex;
 .sticky + .content {
   padding-top: 30px;
 }
+.vendors{
+  margin-left: 10px;
+}
+.ke-brand{
+  width: 40px;
+  height: 40px;
+}
+.brand-con{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 2px;
+  color: green;
+}
+.ke-brand-con{
+  display: none;
+}
 /* ######### MEDIA QUERY --->>>>>>>>####>>>>>>>...>>>*/
 /*// Small devices (landscape phones, 576px and below)*/
 @media (max-width: 576px) {
   .hidden_xs{
     display: none;
+  }
+  .ke-brand-con{
+    display: block;
   }
   .search-input{
     width: 240px;
@@ -276,9 +297,18 @@ display: flex;
     <div id="menu-icon">
       <button class="openbtn" onclick="openNav()">☰</button>  
     </div> 
-    <div>
-      <a href="{% url 'home' %}">{% trans 'Mesh-Mall' %}</a>
+    <div class="ke-brand-con">
+      <a href="{% url 'home' %}">
+        <div class="brand-con">
+          <div><img src="{% static 'img/mesh4.png'%}" class="ke-brand"></div>
+          <div>{% trans 'Mesh-Mall'%}</div>
+        </div>
+      </a>
     </div>
+    <div class="vendors hidden_xs">
+      <a href="{% url 'multivendorform'%}">{% trans ' Sell ' %}</a>
+    </div>
+    
     <!-- sPACER -->
     <div class="spacer"></div>
     <!-- sPACER -->
@@ -295,10 +325,10 @@ display: flex;
 
                     {% get_current_language as LANGUAGE_CODE %}
                     {% get_available_languages as LANGUAGES %}
-                     {% get_language_info_list for LANGUAGES as languages %}
+                    {% get_language_info_list for LANGUAGES as languages %}
                     {% for language in languages %}
                         <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                            {{ language.name_local }} ({{ language.code }})
+                            {{ language.name_local }}
                         </option>
                     {% endfor %}
 
@@ -348,6 +378,17 @@ display: flex;
 
 <div id="navbar">
  <div id="header-two">
+  <!--- KE BRAND >>>>>>>>>>>>>>>>>>END >>>>>>>> -->
+  <div class="hidden_xs">
+    <a href="{% url 'home' %}">
+        <div class="brand-con">
+          <div><img src="{% static 'img/mesh4.png'%}" class="ke-brand"></div>
+          <div>{% trans 'Mesh-Mall'%}</div>
+        </div>
+      </a>
+  </div>
+  <!--- KE BRAND >>>>>>>>>>>>>>>>>>END >>>>>>>> -->
+
   <!--- SEARCH >>>>>>>>>>>>>>>>>>START >>>>>>>> -->
    <div>
      <script>
@@ -376,7 +417,7 @@ display: flex;
           </div>
           <div class="search-input">
             <input id="query" name="query" class="input search-input" type="text" 
-            placeholder="Enter your keyword">
+            placeholder="{% trans 'Enter your keyword'%}">
           </div>
           <div>
             <button class="search-btn"><i class="fa fa-search"></i></button>
@@ -556,7 +597,7 @@ display: flex;
                     {% get_language_info_list for LANGUAGES as languages %}
                     {% for language in languages %}
                         <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                            {{ language.name_local }} ({{ language.code }})
+                            {{ language.name_local }}
                         </option>
                     {% endfor %}
 

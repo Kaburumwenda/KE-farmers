@@ -23,16 +23,16 @@ def addtoshopcart(request,id):
     checkinvariant = ShopCart.objects.filter(variant_id=variantid)  # Check product in shopcart
 
     control = 0
-    if checkinproduct:
+    """if checkinproduct:
         control = 1
     if checkinvariant:
-        control = 1
+        control = 1"""
 
 
-    """if checkinproduct and checkinvariant:
+    if checkinproduct and checkinvariant:
         control = 1 # The product is in the cart
     else:
-        control = 0 # The product is not in the cart"""
+        control = 0 # The product is not in the cart
 
     if request.method == 'POST':  # if there is a post
         form = ShopCartForm(request.POST)

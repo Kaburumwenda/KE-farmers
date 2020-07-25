@@ -1,0 +1,114 @@
+{% extends 'homebase.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block title %} Vendors-{{ setting.title }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+
+
+{% block body %}
+
+    <!-- BREADCRUMB -->
+    <div id="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+                <li class="active">{% trans "Multivendor Portal" %}</li>
+            </ul>
+        </div>
+    </div>
+    <!-- /BREADCRUMB -->
+    <br>
+<div class="container">
+<div class="section-title">
+    <h3 class="title">{% trans "Product Upload Form"%}</h3>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{message.tags}}" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+</div>
+<br>
+<hr>
+<form id="checkout-form" class="clearfix" method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-6">{{ form.firstname|as_crispy_field }}</div>
+        <div class="col-md-6">{{ form.lastname|as_crispy_field }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">{{ form.phone|as_crispy_field }}</div>
+        <div class="col-md-6">{{ form.email|as_crispy_field }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">{{ form.address|as_crispy_field }}</div>
+        <div class="col-md-6">{{ form.businessname|as_crispy_field }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">{{ form.title|as_crispy_field }}</div>
+        <div class="col-md-6">{{ form.condition|as_crispy_field }}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">{{ form.price|as_crispy_field }}</div>
+        <div class="col-md-4">{{ form.discount|as_crispy_field }}</div>
+        <div class="col-md-4">{{ form.amount|as_crispy_field }}</div>
+
+    </div>
+      {{ form.description|as_crispy_field }}
+    <div>
+        
+    </div>
+     <div class="row">
+         <div class="col-md-4">
+            <button class="btn btn-block btn-success text-center btn-lg"> 
+                <i class="fa fa-database"></i> 
+                {% trans 'Submit'%}
+            </button>
+             <!--<input type="submit" value="{% trans 'SEND FORM' %}">-->
+         </div>
+         <div class="col-md-8"></div>
+     </div>
+    
+</form>
+<br>
+<hr>
+
+</div>
+
+<style type="text/css">
+    /* ######### MEDIA QUERY --->>>>>>>>####>>>>>>>...>>>*/
+/*// Small devices (landscape phones, 576px and below)*/
+@media (max-width: 576px) {
+  .title{
+    font-size: 14px;
+  }
+  
+ }
+
+/*// Medium devices (tablets, 768px and below)*/
+@media (max-width: 768px) { 
+  
+ }
+
+/*/ Large devices (desktops, 992px and below)*/
+@media (max-width: 992px) { 
+  
+ }
+
+/*/ Extra large devices (large desktops, 1200px and below)*/
+@media (max-width: 1200px) {
+  
+  
+ }
+</style>
+
+{% endblock %}

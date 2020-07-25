@@ -1,75 +1,111 @@
 {% extends 'homebase.html' %}
 {% load i18n %}
+{% load crispy_forms_tags %}
 
 {% block title %} User Sign Up  {{ setting.title }} {% endblock %}
 {% block description %} {{ setting.description }} {% endblock %}
 {% block keywords %} {{ setting.keywords }} {% endblock %}
-{% load i18n %}
+
 
 
 {% block body %}
 
-	<!-- BREADCRUMB -->
-	<div id="breadcrumb">
-		<div class="container">
-			<ul class="breadcrumb">
-				<li><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
-				<li class="active">{% trans 'User sign Up' %} </li>
-			</ul>
-		</div>
-	</div>
-	<!-- /BREADCRUMB -->
+    <!-- BREADCRUMB -->
+    <div id="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+                <li class="active">{% trans 'User sign Up' %} </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /BREADCRUMB -->
 
-	<!-- section -->
-	<div class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
+    
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+        
+            <div class="section-title">
+                <h3 class="title">{% trans 'Sign Up Form' %}</h3>
+            </div>
 
-                <div class="col-md-12">
-                    <div class="billing-details">
-
-                        <div class="section-title">
-                            <h3 class="title">{% trans 'Sign Up Form' %}</h3>
-                        </div>
-
-                        {% if messages %}
-                            {% for message in messages %}
-                                <div class="alert alert-{{message.tags}}" role="alert">
-                                    {{ message }}
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-
-                        <form method="post">
-                            {% csrf_token %}
-                            {% for field in form %}
-                                <p>
-                                    {{ field.label_tag }}<br>
-                                    {{ field }}
-                                    {% if field.help_text %}
-                                        <small style="color: grey">{{ field.help_text }}</small>
-                                    {% endif %}
-                                    {% for error in field.errors %}
-                                        <p style="color: red">{{ error }}</p>
-                                    {% endfor %}
-                                </p>
-                            {% endfor %}
-                            <button type="submit">{% trans 'Sign Up' %}</button>
-                        </form>
-
-
-
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{message.tags}}" role="alert">
+                        {{ message }}
                     </div>
+                {% endfor %}
+            {% endif %}
+
+            <form method="post">
+                {% csrf_token %}
+                {{form.username|as_crispy_field}}
+
+                <div class="row">
+                    <div class="col-md-6">{{form.email|as_crispy_field}}</div>
+                    <div class="col-md-6">{{form.phone|as_crispy_field}}</div>
                 </div>
 
+                <div class="row">
+                    <div class="col-md-6">{{form.first_name|as_crispy_field}}</div>
+                    <div class="col-md-6">{{form.last_name|as_crispy_field}}</div>
+                </div>
 
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /section -->
+                <div class="row">
+                    <div class="col-md-6">{{form.password1|as_crispy_field}}</div>
+                    <div class="col-md-6">{{form.password2|as_crispy_field}}</div>
+                </div>
+                <br>
+                {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+                <div class="row">
+                    <div class="col-md-4">
+                <button type="submit" class="btn btn-block btn-success text-center">
+                    {% trans 'Sign Up' %}
+                </button>
+                    </div>
+                    <div class="col-md-8">
+                        <a href="{% url 'login'%}" class="btn btn-secondary">
+                            {% trans 'already have an Account'%} : 
+                            <span style="color: red">{% trans 'Login'%}</span>
+                        </a>
+                    </div>
+                </div>
+            
+            </form>
+            <br>
+            <hr>
 
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+
+<style type="text/css">
+    /* ######### MEDIA QUERY --->>>>>>>>####>>>>>>>...>>>*/
+/*// Small devices (landscape phones, 576px and below)*/
+@media (max-width: 576px) {
+  .title{
+    font-size: 14px;
+  }
+  
+ }
+
+/*// Medium devices (tablets, 768px and below)*/
+@media (max-width: 768px) { 
+  
+ }
+
+/*/ Large devices (desktops, 992px and below)*/
+@media (max-width: 992px) { 
+  
+ }
+
+/*/ Extra large devices (large desktops, 1200px and below)*/
+@media (max-width: 1200px) {
+  
+  
+ }
+</style>
 {% endblock %}
